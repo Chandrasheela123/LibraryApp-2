@@ -29,6 +29,19 @@ struct Account {
     
 }
 
+struct Books {
+    
+    var bookName : String
+    var numberOfBooks : String
+    var author : String
+    var publicationDate : String
+    var bookID : String
+    
+    func bookDict() -> [String : String]{
+        ["bookID" : bookID , "bookname" : bookName, "numberOfBooks" : numberOfBooks, "author": author, "publicationDate": publicationDate]
+    }
+}
+
 class DBUtility {
     
     private init(){}
@@ -47,6 +60,14 @@ class DBUtility {
         if let user = loggedInUser {
             dbRef.child("Users").child(user.uid).setValue(uAccount.toDict())
         }
+        
+    }
+    
+    func saveBooksDetails(bookID: String, bookName: String, numberOfBooks: String, author: String, publicationDate: String){
+        
+        let bookAccount = Books(bookName: bookName, numberOfBooks: numberOfBooks, author: author, publicationDate: publicationDate, bookID: bookID)
+        dbRef.child("BooksList").childByAutoId().setValue(bookAccount.bookDict())
+        
         
     }
     
@@ -84,76 +105,36 @@ class DBUtility {
         }
     }
     
-//    func updateProfilePic(picurl: String){
-//
-//        let loggedInUser = Auth.auth().currentUser
-//
-//        if let user = loggedInUser {
-//            // read from realtime database
-//
-//            let uNode = dbRef.child("Users").child(user.uid)
-//
-//            uNode.child("profileUrl").setValue(picurl)
-//
-//            print("Image Url: \(picurl)")
-//        }
-//
-//    }
+    func getBooksDetails(completionHandler: @escaping (Books) -> Void) {
+            
+            let uNode = dbRef.child("Users").child("BookID")
+            
+            uNode.getData { err, snapshot in
+                
+                if err == nil {
+                    
+                    let info = snapshot?.value as! Dictionary<String, String>
+                    
+                    let bookName = info["Book Name"] ?? ""
+                    let numberOfBooks = info["Number of Books"] ?? ""
+                    let author = info["Author"] ?? ""
+                    let publicationDate = info["Publication Date"] ?? ""
+                    let bookID = info["BookID"] ?? ""
+                    
+                    
+                    print("\(bookName)")
+                    print("\(numberOfBooks)")
+                    print("\(author)")
+                    print("\(publicationDate)")
+                    
+                    
+                    let book = Books(bookName: bookName, numberOfBooks: numberOfBooks, author: author, publicationDate: publicationDate, bookID: bookID)
+                    completionHandler(book)
+                
+            }
+        }
+    }
     
-//    func getCoordFromAddress(address : String, completion: @escaping (CLLocation) -> Void) {
-//
-//        let gc = CLGeocoder()
-//        gc.geocodeAddressString(address) {places, err in
-//            if err == nil {
-//                if let placeList = places {
-//
-//                    let place = placeList[0]
-//                    if let loc = place.location {
-//                        print("got latitude")
-//                        completion(loc)
-//                    }
-//                }
-//            }
-//            else
-//            {
-//                print("ERROR: \(err?.localizedDescription ?? "")")
-//
-//            }
-//        }
-//
-//    }
-    
-//    func getCoord(lat : Double, long: Double)
-//    {
-//        let loggedInUser = Auth.auth().currentUser
-//
-//        if let user = loggedInUser {
-//            // read from realtime database
-//
-//            let uNode = dbRef.child("Users").child(user.uid)
-//
-//            uNode.child("latitude").setValue(lat)
-//            uNode.child("longitude").setValue(long)
-//
-//
-//        }
-//    }
-//
-//    func calculateDistance(){
-//
-//        let coor1 = CLLocation(latitude: <#CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>)
-//        let coor2 = CLLocation(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>)
-//
-//        let distance = coor1.distance(from: coor2)
-//
-//        if(distance <= 10000)
-//        {
-//
-//        }
-//
-//
-//
-//    }
 }
 
 

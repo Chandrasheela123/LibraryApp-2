@@ -24,8 +24,8 @@ class RegisterVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet weak var loginBtn: UILabel!
-    @IBAction func registerBtn(_ sender: Any) {
+    
+    @IBAction func signUpBtnClick(_ sender: Any) {
         
         let fullname = fullNameTxt.text ?? ""
         let password = newPasswordTxt.text ?? ""
@@ -43,6 +43,8 @@ class RegisterVC: UIViewController {
                 
                 DBUtility.instance.saveUserDetails(fullname: fullname, email: email, city: city, mobile: mobile)
                 
+               
+                
             }
             else {
                 
@@ -52,6 +54,8 @@ class RegisterVC: UIViewController {
             }
             
         }
+    
+    @IBAction func backBtn(_ sender: Any) {
     }
     
     /*

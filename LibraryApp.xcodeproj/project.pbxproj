@@ -16,7 +16,12 @@
 		3640C741285323840059D14F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3640C740285323840059D14F /* FirebaseAuth */; };
 		3640C743285323840059D14F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3640C742285323840059D14F /* FirebaseDatabase */; };
 		3640C745285323840059D14F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3640C744285323840059D14F /* FirebaseStorage */; };
-		5E985B0828537CDC009CE771 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E985B0728537CDC009CE771 /* GoogleService-Info.plist */; };
+		5E5B1F462854766700210512 /* MemberListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F452854766700210512 /* MemberListVC.swift */; };
+		5E5B1F482854770300210512 /* MembersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F472854770300210512 /* MembersListCell.swift */; };
+		5E5B1F4C2854941800210512 /* AddBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F4B2854941800210512 /* AddBookVC.swift */; };
+		5E5B1F522854D0F000210512 /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F512854D0F000210512 /* BookListCell.swift */; };
+		5E5B1F552855C2CB00210512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5B1F542855C2CB00210512 /* GoogleService-Info.plist */; };
+		5E5B1F572855DF2300210512 /* BookListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F562855DF2300210512 /* BookListVC.swift */; };
 		5EDDEE722854506A0036CDCF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE712854506A0036CDCF /* LoginVC.swift */; };
 		5EDDEE74285450910036CDCF /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE73285450910036CDCF /* RegisterVC.swift */; };
 		5EDDEE76285450BA0036CDCF /* WelcomeAdminVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE75285450BA0036CDCF /* WelcomeAdminVC.swift */; };
@@ -35,7 +40,12 @@
 		3640C73128530DEF0059D14F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3640C73428530DEF0059D14F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3640C73628530DEF0059D14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E985B0728537CDC009CE771 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5E5B1F452854766700210512 /* MemberListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListVC.swift; sourceTree = "<group>"; };
+		5E5B1F472854770300210512 /* MembersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersListCell.swift; sourceTree = "<group>"; };
+		5E5B1F4B2854941800210512 /* AddBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookVC.swift; sourceTree = "<group>"; };
+		5E5B1F512854D0F000210512 /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
+		5E5B1F542855C2CB00210512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5E5B1F562855DF2300210512 /* BookListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListVC.swift; sourceTree = "<group>"; };
 		5EDDEE712854506A0036CDCF /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5EDDEE73285450910036CDCF /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		5EDDEE75285450BA0036CDCF /* WelcomeAdminVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAdminVC.swift; sourceTree = "<group>"; };
@@ -78,13 +88,12 @@
 		3640C72728530DEC0059D14F /* LibraryApp */ = {
 			isa = PBXGroup;
 			children = (
-				3640C73E285310400059D14F /* Controller */,
 				3640C73D285310390059D14F /* Model */,
 				3640C73C285310310059D14F /* View */,
+				3640C73E285310400059D14F /* Controller */,
 				3640C73128530DEF0059D14F /* Assets.xcassets */,
-				3640C73328530DEF0059D14F /* LaunchScreen.storyboard */,
 				3640C73628530DEF0059D14F /* Info.plist */,
-				5E985B0728537CDC009CE771 /* GoogleService-Info.plist */,
+				5E5B1F542855C2CB00210512 /* GoogleService-Info.plist */,
 			);
 			path = LibraryApp;
 			sourceTree = "<group>";
@@ -94,7 +103,7 @@
 			children = (
 				3640C72828530DEC0059D14F /* AppDelegate.swift */,
 				3640C72A28530DEC0059D14F /* SceneDelegate.swift */,
-				3640C72C28530DEC0059D14F /* ViewController.swift */,
+				3640C73328530DEF0059D14F /* LaunchScreen.storyboard */,
 				3640C72E28530DEC0059D14F /* Main.storyboard */,
 			);
 			path = View;
@@ -113,10 +122,16 @@
 		3640C73E285310400059D14F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3640C72C28530DEC0059D14F /* ViewController.swift */,
 				5EDDEE712854506A0036CDCF /* LoginVC.swift */,
 				5EDDEE73285450910036CDCF /* RegisterVC.swift */,
 				5EDDEE75285450BA0036CDCF /* WelcomeAdminVC.swift */,
 				5EDDEE77285450EB0036CDCF /* WelcomeLibraryMembersVC.swift */,
+				5E5B1F452854766700210512 /* MemberListVC.swift */,
+				5E5B1F472854770300210512 /* MembersListCell.swift */,
+				5E5B1F4B2854941800210512 /* AddBookVC.swift */,
+				5E5B1F562855DF2300210512 /* BookListVC.swift */,
+				5E5B1F512854D0F000210512 /* BookListCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,9 +203,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3640C73528530DEF0059D14F /* LaunchScreen.storyboard in Resources */,
+				5E5B1F552855C2CB00210512 /* GoogleService-Info.plist in Resources */,
 				3640C73228530DEF0059D14F /* Assets.xcassets in Resources */,
 				3640C73028530DEC0059D14F /* Main.storyboard in Resources */,
-				5E985B0828537CDC009CE771 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,15 +217,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3640C72D28530DEC0059D14F /* ViewController.swift in Sources */,
+				5E5B1F4C2854941800210512 /* AddBookVC.swift in Sources */,
+				5E5B1F462854766700210512 /* MemberListVC.swift in Sources */,
+				5E5B1F572855DF2300210512 /* BookListVC.swift in Sources */,
 				5EDDEE7E2854577D0036CDCF /* MemberDetailsUtility.swift in Sources */,
 				3640C72928530DEC0059D14F /* AppDelegate.swift in Sources */,
 				5EDDEE7C285457620036CDCF /* Utility.swift in Sources */,
+				5E5B1F522854D0F000210512 /* BookListCell.swift in Sources */,
 				5EDDEE722854506A0036CDCF /* LoginVC.swift in Sources */,
 				3640C72B28530DEC0059D14F /* SceneDelegate.swift in Sources */,
 				5EDDEE78285450EB0036CDCF /* WelcomeLibraryMembersVC.swift in Sources */,
 				5EDDEE74285450910036CDCF /* RegisterVC.swift in Sources */,
 				5EDDEE7A285457430036CDCF /* DBUtilities.swift in Sources */,
 				5EDDEE76285450BA0036CDCF /* WelcomeAdminVC.swift in Sources */,
+				5E5B1F482854770300210512 /* MembersListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +380,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sprint2/Info.plist;
+				INFOPLIST_FILE = LibraryApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -372,7 +392,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.capgemini.Sprint2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.capgemini.LibraryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -388,7 +408,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sprint2/Info.plist;
+				INFOPLIST_FILE = LibraryApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -400,7 +420,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.capgemini.Sprint2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.capgemini.LibraryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

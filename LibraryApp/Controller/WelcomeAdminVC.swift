@@ -16,11 +16,17 @@ class WelcomeAdminVC: UIViewController {
     }
     
     @IBAction func membersListBtn(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "memberlist") as! MemberListVC
+        show(vc, sender: self)
+        
     }
-    @IBAction func searchBooksBtn(_ sender: Any) {
+    @IBAction func booksListBtn(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "booksearch") as! BookListVC
+        show(vc, sender: nil)
     }
-    @IBAction func libraryCardBtn(_ sender: Any) {
-    }
+   
     
     /*
     // MARK: - Navigation

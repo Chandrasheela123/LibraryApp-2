@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginVC: UIViewController {
 
@@ -17,9 +18,36 @@ class LoginVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func cancleBtn(_ sender: Any) {
+    @IBAction func signUpBtn(_ sender: Any) {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "register") as! RegisterVC
+        self.show(vc, sender: nil)
     }
+    
     @IBAction func loginBtn(_ sender: Any) {
+        
+        let uname = emailIDTxt.text ?? ""
+        let password = passwordTxt.text ?? ""
+        
+        Auth.auth().signIn(withEmail: uname, password: password) { result, err in
+            if err == nil{
+                
+                if self.emailIDTxt.text == "admin@gmail.com" && self.passwordTxt.text == "admin123" {
+                    
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "admin") as! WelcomeAdminVC
+                    self.show(vc, sender: nil)
+                    
+                }
+                else {
+                    
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "member") as! WelcomeLibraryMembersVC
+                    self.show(vc, sender: nil)
+                }
+            }
+            else {
+                self.showAlert(title: "Login failed..", msg: err!.localizedDescription)
+            }
+        }
     }
     
     /*
