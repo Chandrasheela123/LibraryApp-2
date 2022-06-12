@@ -17,7 +17,7 @@ class BookListVC: UIViewController {
     var dbref : DatabaseReference?
     var dbHandle : DatabaseHandle?
     var postData = [BooksDetails]()
-    var filteredUsers = [BooksDetails]()
+  //  var filteredUsers = [BooksDetails]()
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +28,7 @@ class BookListVC: UIViewController {
         super.viewDidLoad()
         
         searchBarTxt.delegate = self
-        filteredUsers = postData
+       // filteredUsers = postData
         
         tbl.delegate = self
         tbl.dataSource = self
@@ -95,7 +95,7 @@ extension BookListVC : UITableViewDataSource, UISearchBarDelegate
 {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredUsers.count
+        return postData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,16 +103,16 @@ extension BookListVC : UITableViewDataSource, UISearchBarDelegate
         let cell = tbl.dequeueReusableCell(withIdentifier: "bookcell", for: indexPath) as! BookListCell
         
         let book : BooksDetails
-        book = filteredUsers[indexPath.row]
+        book = postData[indexPath.row]
         
         cell.booknameLbl.text = book.bookname
         cell.noOfBooksLbl.text = book.noOfBooks
         
         return cell
     }
-//    
+//
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        
+//
 //        if searchText.isEmpty == false
 //        {
 //            filteredUsers = postData.filter({ $0.contains(searchText)})

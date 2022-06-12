@@ -15,7 +15,17 @@ class WelcomeLibraryMembersVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func borrowedBooksBtn(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "borrow") as! BorrowedBooksVC
+        
+        show(vc, sender: self)
+    }
     @IBAction func searchBooksBtn(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "usersearch") as! SearchBookVC
+        
+        show(vc, sender: self)
     }
     
     /*

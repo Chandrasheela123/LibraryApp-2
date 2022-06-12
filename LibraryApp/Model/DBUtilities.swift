@@ -18,13 +18,14 @@ struct Account {
     var mobile : String
     var fullname : String
     var city : String
+    var password : String
     
     
     
     
     // object to dictionary conversion
     func toDict() -> [String : String] {
-        ["fullname": fullname, "email" : email, "city": city, "mobile" : mobile]
+        ["fullname": fullname, "email" : email, "city": city, "mobile" : mobile, "password" : password]
     }
     
 }
@@ -51,11 +52,11 @@ class DBUtility {
     let dbRef = Database.database().reference()
     let loggedInUser = Auth.auth().currentUser
     
-    func saveUserDetails(fullname:String, email: String, city: String, mobile: String){
+    func saveUserDetails(fullname:String, email: String, city: String, mobile: String, password: String){
         
         let loggedInUser = Auth.auth().currentUser
         
-        let uAccount = Account(email: email, mobile: mobile, fullname: fullname, city: city)
+        let uAccount = Account(email: email, mobile: mobile, fullname: fullname, city: city, password: password)
         
         if let user = loggedInUser {
             dbRef.child("Users").child(user.uid).setValue(uAccount.toDict())
@@ -90,6 +91,7 @@ class DBUtility {
                     let mobile = info["mobile"] ?? ""
                     let fullname = info["fullname"] ?? ""
                     let city = info["city"] ?? ""
+                    let password = info["password"] ?? ""
                     
                     print("\(fullname)")
                     print("\(email)")
@@ -97,7 +99,7 @@ class DBUtility {
                     print("\(city)")
                     
                     
-                    let acc = Account(email: email, mobile: mobile, fullname: fullname, city: city)
+                    let acc = Account(email: email, mobile: mobile, fullname: fullname, city: city, password: password)
                     
                     completionHandler(acc)
                 }
