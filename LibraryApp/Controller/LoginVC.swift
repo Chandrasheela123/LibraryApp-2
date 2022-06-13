@@ -50,6 +50,8 @@ class LoginVC: UIViewController {
         }
     }
     
+    @IBAction func forgotPasswordBtn(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 

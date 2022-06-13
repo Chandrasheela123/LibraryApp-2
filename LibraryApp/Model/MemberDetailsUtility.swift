@@ -33,3 +33,14 @@ class BooksDetails {
         self.noOfBooks = noOfBooks
     }
 }
+
+
+class UserBookList {
+    let bookname : String?
+    let author : String?
+    init(bookname : String? , author : String?) {
+        
+        self.bookname = bookname
+        self.author = author
+    }
+}

@@ -16,6 +16,7 @@
 		3640C741285323840059D14F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3640C740285323840059D14F /* FirebaseAuth */; };
 		3640C743285323840059D14F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3640C742285323840059D14F /* FirebaseDatabase */; };
 		3640C745285323840059D14F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3640C744285323840059D14F /* FirebaseStorage */; };
+		5E3880E828574C2200A8D6D3 /* UsersBookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3880E728574C2200A8D6D3 /* UsersBookListCell.swift */; };
 		5E460DBB2856F11D0064BE32 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E460DBA2856F11D0064BE32 /* Utility.swift */; };
 		5E5B1F462854766700210512 /* MemberListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F452854766700210512 /* MemberListVC.swift */; };
 		5E5B1F482854770300210512 /* MembersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F472854770300210512 /* MembersListCell.swift */; };
@@ -42,6 +43,7 @@
 		3640C73128530DEF0059D14F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3640C73428530DEF0059D14F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3640C73628530DEF0059D14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E3880E728574C2200A8D6D3 /* UsersBookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersBookListCell.swift; sourceTree = "<group>"; };
 		5E460DBA2856F11D0064BE32 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		5E5B1F452854766700210512 /* MemberListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListVC.swift; sourceTree = "<group>"; };
 		5E5B1F472854770300210512 /* MembersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersListCell.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				3640C72E28530DEC0059D14F /* Main.storyboard */,
 				5E5B1F472854770300210512 /* MembersListCell.swift */,
 				5E5B1F512854D0F000210512 /* BookListCell.swift */,
+				5E3880E728574C2200A8D6D3 /* UsersBookListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				5E5B1F462854766700210512 /* MemberListVC.swift in Sources */,
 				5E5B1F572855DF2300210512 /* BookListVC.swift in Sources */,
 				5EDDEE7E2854577D0036CDCF /* MemberDetailsUtility.swift in Sources */,
+				5E3880E828574C2200A8D6D3 /* UsersBookListCell.swift in Sources */,
 				5E5B1F5B2856296200210512 /* SearchBookVC.swift in Sources */,
 				3640C72928530DEC0059D14F /* AppDelegate.swift in Sources */,
 				5E5B1F522854D0F000210512 /* BookListCell.swift in Sources */,
