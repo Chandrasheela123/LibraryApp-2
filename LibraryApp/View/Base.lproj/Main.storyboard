@@ -36,7 +36,7 @@
                                     <constraint firstAttribute="height" constant="303" id="a4D-ha-M78"/>
                                 </constraints>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="lqR-w8-d1n">
+                            <segmentedControl opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="lqR-w8-d1n">
                                 <rect key="frame" x="53" y="797" width="309" height="32"/>
                                 <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 <segments>
@@ -547,8 +547,8 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xk-bg-tkv">
-                                                    <rect key="frame" x="293" y="43" width="71" height="31"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xk-bg-tkv">
+                                                    <rect key="frame" x="293" y="43" width="71" height="30"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Borrow">
                                                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="13"/>
@@ -558,16 +558,16 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6Xk-bg-tkv" firstAttribute="trailing" secondItem="wGw-sF-zNg" secondAttribute="trailing" id="0ox-g4-PBb"/>
+                                                <constraint firstItem="6Xk-bg-tkv" firstAttribute="leading" secondItem="aPr-6A-9hH" secondAttribute="leadingMargin" constant="273" id="0x5-vQ-is7"/>
                                                 <constraint firstItem="bGR-HO-zYr" firstAttribute="leading" secondItem="aPr-6A-9hH" secondAttribute="leadingMargin" constant="10" id="B1o-GR-X6Y"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wGw-sF-zNg" secondAttribute="trailing" constant="10" id="cO3-oe-RuN"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bGR-HO-zYr" secondAttribute="trailing" constant="10" id="eRR-Du-tfc"/>
                                                 <constraint firstAttribute="bottom" secondItem="bGR-HO-zYr" secondAttribute="bottom" constant="66" id="exZ-cm-0tM"/>
+                                                <constraint firstItem="6Xk-bg-tkv" firstAttribute="top" secondItem="aPr-6A-9hH" secondAttribute="topMargin" constant="32" id="gtH-Mw-Aj1"/>
                                                 <constraint firstItem="bGR-HO-zYr" firstAttribute="top" secondItem="aPr-6A-9hH" secondAttribute="topMargin" constant="10" id="ivB-Bc-Ir0"/>
-                                                <constraint firstItem="6Xk-bg-tkv" firstAttribute="top" secondItem="aPr-6A-9hH" secondAttribute="topMargin" constant="32" id="k2K-ui-rQE"/>
                                                 <constraint firstItem="wGw-sF-zNg" firstAttribute="leading" secondItem="aPr-6A-9hH" secondAttribute="leadingMargin" constant="10" id="mE7-G4-Zad"/>
-                                                <constraint firstItem="6Xk-bg-tkv" firstAttribute="centerY" secondItem="aPr-6A-9hH" secondAttribute="centerY" id="n2E-qn-SXM"/>
                                                 <constraint firstItem="wGw-sF-zNg" firstAttribute="top" secondItem="bGR-HO-zYr" secondAttribute="bottom" constant="10" id="wfq-N7-oRj"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6Xk-bg-tkv" secondAttribute="trailing" constant="10" id="xe5-oc-lWq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.75718921370000003" green="0.77997488380000002" blue="0.82434729370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -731,7 +731,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcB-Jy-hsM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-457.97101449275368" y="620.75892857142856"/>
+            <point key="canvasLocation" x="-294" y="675"/>
         </scene>
         <!--Borrowed BooksVC-->
         <scene sceneID="CfC-uP-bib">
