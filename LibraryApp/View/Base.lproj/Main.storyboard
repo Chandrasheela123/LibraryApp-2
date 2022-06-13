@@ -634,6 +634,81 @@
             </objects>
             <point key="canvasLocation" x="2425" y="684"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Yeg-kN-4al">
+            <objects>
+                <viewController id="bXD-Ai-qJx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BlE-hU-oSx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxi-jK-RBV">
+                                <rect key="frame" x="100" y="104" width="214" height="45"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Pay Fine Here">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="28" name="Noteworthy-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="tsB-d9-emK">
+                                <rect key="frame" x="60" y="219" width="294" height="103"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of the Book" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bzx-2n-8vD">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Loe-hX-6oh">
+                                        <rect key="frame" x="0.0" y="69" width="294" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3Y-Sy-jHY">
+                                <rect key="frame" x="60" y="392" width="78" height="28.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Pay Here">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0N-Td-N5v">
+                                <rect key="frame" x="276" y="392" width="71.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Cancel">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zQF-ny-WoN"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        <constraints>
+                            <constraint firstItem="U3Y-Sy-jHY" firstAttribute="top" secondItem="tsB-d9-emK" secondAttribute="bottom" constant="70" id="HXA-br-xHC"/>
+                            <constraint firstItem="Mxi-jK-RBV" firstAttribute="top" secondItem="zQF-ny-WoN" secondAttribute="top" constant="60" id="Rct-Sh-YbN"/>
+                            <constraint firstItem="U3Y-Sy-jHY" firstAttribute="leading" secondItem="zQF-ny-WoN" secondAttribute="leading" constant="60" id="Sqc-HR-Sx0"/>
+                            <constraint firstItem="N0N-Td-N5v" firstAttribute="top" secondItem="U3Y-Sy-jHY" secondAttribute="top" id="fF8-f9-Hdg"/>
+                            <constraint firstItem="zQF-ny-WoN" firstAttribute="trailing" secondItem="tsB-d9-emK" secondAttribute="trailing" constant="60" id="kDk-38-mtj"/>
+                            <constraint firstItem="zQF-ny-WoN" firstAttribute="trailing" secondItem="Mxi-jK-RBV" secondAttribute="trailing" constant="100" id="kxt-Gk-cW3"/>
+                            <constraint firstItem="zQF-ny-WoN" firstAttribute="trailing" secondItem="N0N-Td-N5v" secondAttribute="trailing" constant="66.5" id="lgP-I9-IF2"/>
+                            <constraint firstItem="tsB-d9-emK" firstAttribute="leading" secondItem="zQF-ny-WoN" secondAttribute="leading" constant="60" id="oxv-7L-Ldn"/>
+                            <constraint firstItem="Mxi-jK-RBV" firstAttribute="leading" secondItem="zQF-ny-WoN" secondAttribute="leading" constant="100" id="sHc-fm-tVV"/>
+                            <constraint firstItem="tsB-d9-emK" firstAttribute="top" secondItem="Mxi-jK-RBV" secondAttribute="bottom" constant="70" id="u2I-0I-fiW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcB-Jy-hsM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-457.97101449275368" y="620.75892857142856"/>
+        </scene>
         <!--Borrowed BooksVC-->
         <scene sceneID="CfC-uP-bib">
             <objects>
@@ -642,14 +717,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borrowed Books" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cu2-tp-4qz">
-                                <rect key="frame" x="100" y="94" width="214" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cu2-tp-4qz">
+                                <rect key="frame" x="100" y="94" width="214" height="32"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Borrowed Books List">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="Noteworthy-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CF2-I3-aAY">
-                                <rect key="frame" x="20" y="148" width="374" height="694"/>
+                                <rect key="frame" x="20" y="156" width="374" height="686"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="116" id="ZdF-w1-mxR">
