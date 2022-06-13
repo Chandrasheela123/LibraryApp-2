@@ -16,6 +16,7 @@
 		3640C741285323840059D14F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3640C740285323840059D14F /* FirebaseAuth */; };
 		3640C743285323840059D14F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3640C742285323840059D14F /* FirebaseDatabase */; };
 		3640C745285323840059D14F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3640C744285323840059D14F /* FirebaseStorage */; };
+		5E460DBB2856F11D0064BE32 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E460DBA2856F11D0064BE32 /* Utility.swift */; };
 		5E5B1F462854766700210512 /* MemberListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F452854766700210512 /* MemberListVC.swift */; };
 		5E5B1F482854770300210512 /* MembersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F472854770300210512 /* MembersListCell.swift */; };
 		5E5B1F4C2854941800210512 /* AddBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F4B2854941800210512 /* AddBookVC.swift */; };
@@ -29,7 +30,6 @@
 		5EDDEE76285450BA0036CDCF /* WelcomeAdminVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE75285450BA0036CDCF /* WelcomeAdminVC.swift */; };
 		5EDDEE78285450EB0036CDCF /* WelcomeLibraryMembersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE77285450EB0036CDCF /* WelcomeLibraryMembersVC.swift */; };
 		5EDDEE7A285457430036CDCF /* DBUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE79285457430036CDCF /* DBUtilities.swift */; };
-		5EDDEE7C285457620036CDCF /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE7B285457620036CDCF /* Utility.swift */; };
 		5EDDEE7E2854577D0036CDCF /* MemberDetailsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE7D2854577D0036CDCF /* MemberDetailsUtility.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +42,7 @@
 		3640C73128530DEF0059D14F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3640C73428530DEF0059D14F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3640C73628530DEF0059D14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E460DBA2856F11D0064BE32 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		5E5B1F452854766700210512 /* MemberListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListVC.swift; sourceTree = "<group>"; };
 		5E5B1F472854770300210512 /* MembersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersListCell.swift; sourceTree = "<group>"; };
 		5E5B1F4B2854941800210512 /* AddBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookVC.swift; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		5EDDEE75285450BA0036CDCF /* WelcomeAdminVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAdminVC.swift; sourceTree = "<group>"; };
 		5EDDEE77285450EB0036CDCF /* WelcomeLibraryMembersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLibraryMembersVC.swift; sourceTree = "<group>"; };
 		5EDDEE79285457430036CDCF /* DBUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUtilities.swift; sourceTree = "<group>"; };
-		5EDDEE7B285457620036CDCF /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		5EDDEE7D2854577D0036CDCF /* MemberDetailsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailsUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +109,8 @@
 				3640C72A28530DEC0059D14F /* SceneDelegate.swift */,
 				3640C73328530DEF0059D14F /* LaunchScreen.storyboard */,
 				3640C72E28530DEC0059D14F /* Main.storyboard */,
+				5E5B1F472854770300210512 /* MembersListCell.swift */,
+				5E5B1F512854D0F000210512 /* BookListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,8 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				5EDDEE79285457430036CDCF /* DBUtilities.swift */,
-				5EDDEE7B285457620036CDCF /* Utility.swift */,
 				5EDDEE7D2854577D0036CDCF /* MemberDetailsUtility.swift */,
+				5E460DBA2856F11D0064BE32 /* Utility.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -132,10 +134,8 @@
 				5EDDEE75285450BA0036CDCF /* WelcomeAdminVC.swift */,
 				5EDDEE77285450EB0036CDCF /* WelcomeLibraryMembersVC.swift */,
 				5E5B1F452854766700210512 /* MemberListVC.swift */,
-				5E5B1F472854770300210512 /* MembersListCell.swift */,
 				5E5B1F4B2854941800210512 /* AddBookVC.swift */,
 				5E5B1F562855DF2300210512 /* BookListVC.swift */,
-				5E5B1F512854D0F000210512 /* BookListCell.swift */,
 				5E5B1F582856293700210512 /* BorrowedBooksVC.swift */,
 				5E5B1F5A2856296200210512 /* SearchBookVC.swift */,
 			);
@@ -229,7 +229,6 @@
 				5EDDEE7E2854577D0036CDCF /* MemberDetailsUtility.swift in Sources */,
 				5E5B1F5B2856296200210512 /* SearchBookVC.swift in Sources */,
 				3640C72928530DEC0059D14F /* AppDelegate.swift in Sources */,
-				5EDDEE7C285457620036CDCF /* Utility.swift in Sources */,
 				5E5B1F522854D0F000210512 /* BookListCell.swift in Sources */,
 				5EDDEE722854506A0036CDCF /* LoginVC.swift in Sources */,
 				3640C72B28530DEC0059D14F /* SceneDelegate.swift in Sources */,
@@ -239,6 +238,7 @@
 				5EDDEE7A285457430036CDCF /* DBUtilities.swift in Sources */,
 				5EDDEE76285450BA0036CDCF /* WelcomeAdminVC.swift in Sources */,
 				5E5B1F482854770300210512 /* MembersListCell.swift in Sources */,
+				5E460DBB2856F11D0064BE32 /* Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
