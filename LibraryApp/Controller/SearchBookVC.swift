@@ -24,7 +24,7 @@ class SearchBookVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
-       
+        tbl.layer.cornerRadius = 20.0
         tbl.delegate = self
         tbl.dataSource = self
         
@@ -45,8 +45,9 @@ class SearchBookVC: UIViewController {
                     
                     let bookName = userObject?["bookname"]
                     let author = userObject?["author"]
+                    let publicationDate = userObject?["publicationDate"]
                     
-                    let book = UserBookList(bookname: bookName as! String, author: author as! String)
+                    let book = UserBookList(bookname: bookName as? String, author: author as? String, publicationDate: publicationDate as? String)
                     
                     print("books")
                     self.postData.append(book)
@@ -85,9 +86,10 @@ extension SearchBookVC : UITableViewDataSource
         
         let book : UserBookList
         book = postData[indexPath.row]
-        
+        cell.layer.cornerRadius = 20
         cell.booknameLbl.text = book.bookname
         cell.authorLbl.text = book.author
+        cell.publicationDateLbl.text = book.publicationDate
         
         return cell
     }
@@ -95,6 +97,20 @@ extension SearchBookVC : UITableViewDataSource
 
 extension SearchBookVC : UITableViewDelegate
 {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+
+        let alert = UIAlertController(title: "Borrow", message: "Want to borrow book", preferredStyle: .alert)
+        let update = UIAlertAction(title: "Yes", style: .default) { _ in
+
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "borrowdetails") as! BorrowBooksDetailsVC
+            vc.bookName = self.postData[indexPath.row].bookname ?? ""
+            self.show(vc, sender: self)
+
+        }
+        alert.addAction(update)
+        present(alert, animated: true, completion: nil)
+
+    }
 }
 

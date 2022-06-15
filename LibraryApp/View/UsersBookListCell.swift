@@ -9,6 +9,7 @@ import UIKit
 
 class UsersBookListCell: UITableViewCell {
 
+    @IBOutlet weak var publicationDateLbl: UILabel!
     @IBOutlet weak var authorLbl: UILabel!
     @IBOutlet weak var booknameLbl: UILabel!
     override func awakeFromNib() {

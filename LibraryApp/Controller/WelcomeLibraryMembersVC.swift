@@ -16,9 +16,9 @@ class WelcomeLibraryMembersVC: UIViewController {
     }
     
     @IBAction func borrowedBooksBtn(_ sender: Any) {
-        
-        let vc = storyboard?.instantiateViewController(withIdentifier: "borrow") as! BorrowedBooksVC
-        
+
+        let vc = storyboard?.instantiateViewController(withIdentifier: "borrowed") as! BorrowedBooksVC
+
         show(vc, sender: self)
     }
     @IBAction func searchBooksBtn(_ sender: Any) {
@@ -28,6 +28,8 @@ class WelcomeLibraryMembersVC: UIViewController {
         show(vc, sender: self)
     }
     
+    @IBAction func requestingForLibraryCardBtn(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 

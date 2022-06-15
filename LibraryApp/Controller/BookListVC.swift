@@ -50,8 +50,11 @@ class BookListVC: UIViewController {
                     
                     let bookName = userObject?["bookname"]
                     let noOfBooks = userObject?["numberOfBooks"]
+                    let bookID = userObject?["bookID"]
+                    let author = userObject?["author"]
+                    let publicationDate = userObject?["publicationDate"]
                     
-                    let book = BooksDetails(bookname: bookName as? String, noOfBooks: noOfBooks as? String)
+                    let book = BooksDetails(bookname: bookName as? String, noOfBooks: noOfBooks as? String, author: author as? String, publicationDate: publicationDate as? String, bookID: bookID as? String)
                     
                     print("books")
                     self.postData.append(book)
@@ -107,6 +110,9 @@ extension BookListVC : UITableViewDataSource, UISearchBarDelegate
         
         cell.booknameLbl.text = book.bookname
         cell.noOfBooksLbl.text = book.noOfBooks
+        cell.authorLbl.text = book.author
+        cell.bookIDLbl.text = book.bookID
+        cell.publicationDateLbl.text = book.publicationDate
         
         return cell
     }
@@ -131,28 +137,49 @@ extension BookListVC : UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let book = postData[indexPath.row]
         
-        let alert = UIAlertController(title: "Update number of books", message: "Update", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Update", message: "Update", preferredStyle: .alert)
         let update = UIAlertAction(title: "update", style: .default) { _ in
             
-            let noOfBooks = alert.textFields?[0].text
+            let bookID = book.bookID
             
-            self.updateNoOfBooks(numberOfBooks: noOfBooks!)
+            let noOfBooks = alert.textFields?[1].text ?? ""
+            //let bookID = alert.textFields?[0].text ?? ""
+            let author = alert.textFields?[3].text ?? ""
+            let publicationDate = alert.textFields?[4].text ?? ""
+            let bookname = alert.textFields?[0].text ?? ""
+            
+            self.updateNoOfBooks(bookID: bookID ?? "", numberOfBooks: noOfBooks, author: author, publicationDate: publicationDate, bookname: bookname)
+            
         }
         
         alert.addTextField{(textField) in
-            
+            textField.text = book.bookname
+        }
+        alert.addTextField{(textField) in
             textField.text = book.noOfBooks
         }
+        alert.addTextField{(textField) in
+            textField.text = book.bookID
+        }
+        alert.addTextField{(textField) in
+            textField.text = book.author
+        }
+        alert.addTextField{(textField) in
+            textField.text = book.publicationDate
+        }
         
+    
         alert.addAction(update)
         present(alert, animated: true, completion: nil)
+        
+      
     }
     
-    func updateNoOfBooks(numberOfBooks: String){
+    func updateNoOfBooks(bookID: String, numberOfBooks: String, author: String, publicationDate: String, bookname: String){
         
-        let book = ["numberOfBoks": numberOfBooks]
+        let book = ["bookID" : bookID ,"numberOfBooks": numberOfBooks, "author": author, "publicationDate": publicationDate, "bookname": bookname]
         
-        dbref?.child("BooksList").setValue(book)
+        dbref?.child(bookID).setValue(book)
     }
     
 }

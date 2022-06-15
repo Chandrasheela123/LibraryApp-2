@@ -27,10 +27,16 @@ class BooksDetails {
     
     let bookname : String?
     let noOfBooks : String?
-    init(bookname : String? , noOfBooks : String?) {
+    let author : String?
+    let publicationDate : String?
+    let bookID : String?
+    init(bookname : String? , noOfBooks : String?, author: String?, publicationDate: String?, bookID: String?) {
         
         self.bookname = bookname
         self.noOfBooks = noOfBooks
+        self.author = author
+        self.publicationDate = publicationDate
+        self.bookID = bookID
     }
 }
 
@@ -38,9 +44,36 @@ class BooksDetails {
 class UserBookList {
     let bookname : String?
     let author : String?
-    init(bookname : String? , author : String?) {
+    let publicationDate : String?
+    init(bookname : String? , author : String?, publicationDate : String?) {
         
         self.bookname = bookname
         self.author = author
+        self.publicationDate = publicationDate
+    }
+}
+
+class IssueLibraryCard {
+    
+    let name : String?
+    let email : String?
+    init(name: String?, email: String?) {
+        
+        self.name = name
+        self.email = email
+    }
+}
+
+class BorrowBookDetails{
+    
+    let bookname : String?
+    let borrowDate : String?
+    let returnDate: String?
+    
+    init(bookname: String?, borrowDate: String?, returnDate: String?)
+    {
+        self.bookname = bookname
+        self.borrowDate = borrowDate
+        self.returnDate = returnDate
     }
 }

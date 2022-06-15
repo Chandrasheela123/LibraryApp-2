@@ -1,18 +1,16 @@
 //
-//  BookListCell.swift
+//  BorrowBooksCell.swift
 //  LibraryApp
 //
-//  Created by cdp on 11/06/22.
+//  Created by cdp on 14/06/22.
 //
 
 import UIKit
 
-class BookListCell: UITableViewCell {
+class BorrowBooksCell: UITableViewCell {
 
-    @IBOutlet weak var publicationDateLbl: UILabel!
-    @IBOutlet weak var authorLbl: UILabel!
-    @IBOutlet weak var bookIDLbl: UILabel!
-    @IBOutlet weak var noOfBooksLbl: UILabel!
+    @IBOutlet weak var returnDateLbl: UILabel!
+    @IBOutlet weak var borrowDateLbl: UILabel!
     @IBOutlet weak var booknameLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

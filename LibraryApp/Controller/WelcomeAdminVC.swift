@@ -27,6 +27,11 @@ class WelcomeAdminVC: UIViewController {
         show(vc, sender: nil)
     }
    
+    @IBAction func libraryCardRequestBtn(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "requestlist") as! LibraryCardIssueListVC
+        show(vc, sender: nil)
+    }
     
     /*
     // MARK: - Navigation
