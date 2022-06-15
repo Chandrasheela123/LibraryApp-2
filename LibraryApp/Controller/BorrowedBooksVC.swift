@@ -26,8 +26,10 @@ class BorrowedBooksVC: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        dbref = Database.database().reference().child("Users")
+        let loggedInUser = Auth.auth().currentUser
+        if let user = loggedInUser{
         
+            dbref = Database.database().reference().child("Users").child(user.uid).child("Borrowed books details")
         
         dbref!.observe(DataEventType.value, with: {(DataSnapshot) in
             
@@ -56,7 +58,7 @@ class BorrowedBooksVC: UIViewController {
             }
         })
     }
-    
+    }
 
     /*
     // MARK: - Navigation
@@ -82,7 +84,7 @@ extension BorrowedBooksVC : UITableViewDataSource, UISearchBarDelegate
         
         let book : BorrowBookDetails
         book = postData[indexPath.row]
-        
+        cell.layer.cornerRadius = 10
         cell.booknameLbl.text = book.bookname
         cell.borrowDateLbl.text = book.borrowDate
         cell.returnDateLbl.text = book.returnDate
@@ -95,6 +97,23 @@ extension BorrowedBooksVC : UITableViewDataSource, UISearchBarDelegate
 
 extension BorrowedBooksVC : UITableViewDelegate
 {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
 
+        let alert = UIAlertController(title: "Return", message: "Want to return book?", preferredStyle: .alert)
+        let update = UIAlertAction(title: "Yes", style: .default){ _ in
+
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "return") as! ReturnBooksVC
+            vc.bookname = self.postData[indexPath.row].bookname ?? ""
+            vc.borrowDate = self.postData[indexPath.row].borrowDate ?? ""
+            vc.returnDate = self.postData[indexPath.row].returnDate ?? ""
+            
+            self.show(vc, sender: self)
+
+        }
+        alert.addAction(update)
+        present(alert, animated: true, completion: nil)
+
+    }
 }
 

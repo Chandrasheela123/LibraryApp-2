@@ -86,7 +86,7 @@ extension SearchBookVC : UITableViewDataSource
         
         let book : UserBookList
         book = postData[indexPath.row]
-        cell.layer.cornerRadius = 20
+        cell.layer.cornerRadius = 10
         cell.booknameLbl.text = book.bookname
         cell.authorLbl.text = book.author
         cell.publicationDateLbl.text = book.publicationDate
@@ -100,7 +100,7 @@ extension SearchBookVC : UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
 
-        let alert = UIAlertController(title: "Borrow", message: "Want to borrow book", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Do you want to borrow this book?", message: "Borrow this book only for 7 days", preferredStyle: .alert)
         let update = UIAlertAction(title: "Yes", style: .default) { _ in
 
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "borrowdetails") as! BorrowBooksDetailsVC
@@ -108,7 +108,9 @@ extension SearchBookVC : UITableViewDelegate
             self.show(vc, sender: self)
 
         }
+       let no = UIAlertAction(title: "No", style: .default)
         alert.addAction(update)
+        alert.addAction(no)
         present(alert, animated: true, completion: nil)
 
     }

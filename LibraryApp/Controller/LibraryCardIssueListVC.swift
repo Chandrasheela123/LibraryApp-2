@@ -27,7 +27,7 @@ class LibraryCardIssueListVC: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        dbref = Database.database().reference().child("Requests for library card")
+        dbref = Database.database().reference().child("Library card details").child("Requests for library card")
         
         
         dbref!.observe(DataEventType.value, with: {(DataSnapshot) in
@@ -106,32 +106,10 @@ extension LibraryCardIssueListVC : UITableViewDataSource
 
 extension LibraryCardIssueListVC : UITableViewDelegate
 {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let book = postData[indexPath.row]
-//
-//        let alert = UIAlertController(title: "Update number of books", message: "Update", preferredStyle: .alert)
-//        let update = UIAlertAction(title: "update", style: .default) { _ in
-//
-//            let noOfBooks = alert.textFields?[0].text
-//
-//            self.updateNoOfBooks(numberOfBooks: noOfBooks!)
-//        }
-//
-//        alert.addTextField{(textField) in
-//
-//            textField.text = book.noOfBooks
-//        }
-//
-//        alert.addAction(update)
-//        present(alert, animated: true, completion: nil)
-//    }
-//
-//    func updateNoOfBooks(numberOfBooks: String){
-//
-//        let book = ["numberOfBoks": numberOfBooks]
-//
-//        dbref?.child("BooksList").setValue(book)
-//    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "card") as! IssueLibraryCardVC
+        show(vc, sender: self)
+    }
 }
 

@@ -23,11 +23,11 @@ class IssueLibraryCardVC: UIViewController {
         
         let cardNumber = Int(cardNumTxt.text ?? "") ?? 0
         let status = statusTxt.text ?? ""
+        let name = nameTxt.text ?? ""
         
         if !status.isEmpty{
         
-        DBUtility.instance.saveCardDetails(cardNumber: cardNumber, status: status)
-        }
+        DBUtility.instance.saveCardDetails(name: name, cardNumber: cardNumber, status: status)
     }
     /*
     // MARK: - Navigation
@@ -39,4 +39,5 @@ class IssueLibraryCardVC: UIViewController {
     }
     */
 
+}
 }

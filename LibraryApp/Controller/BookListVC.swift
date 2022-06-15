@@ -17,7 +17,7 @@ class BookListVC: UIViewController {
     var dbref : DatabaseReference?
     var dbHandle : DatabaseHandle?
     var postData = [BooksDetails]()
-  //  var filteredUsers = [BooksDetails]()
+    var filteredUsers = [BooksDetails]()
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +28,7 @@ class BookListVC: UIViewController {
         super.viewDidLoad()
         
         searchBarTxt.delegate = self
-       // filteredUsers = postData
+        filteredUsers = postData
         
         tbl.delegate = self
         tbl.dataSource = self
@@ -116,20 +116,20 @@ extension BookListVC : UITableViewDataSource, UISearchBarDelegate
         
         return cell
     }
-//
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//
-//        if searchText.isEmpty == false
-//        {
-//            filteredUsers = postData.filter({ $0.contains(searchText)})
-//            tbl.reloadData()
-//        }
-//        else
-//        {
-//            filteredUsers = postData
-//            tbl.reloadData()
-//        }
-//    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+        if searchText.isEmpty == false
+        {
+           // filteredUsers = postData.filter({ $0.contains(searchText)})
+            tbl.reloadData()
+        }
+        else
+        {
+            filteredUsers = postData
+            tbl.reloadData()
+        }
+    }
 }
 
 extension BookListVC : UITableViewDelegate
