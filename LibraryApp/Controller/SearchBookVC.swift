@@ -104,7 +104,7 @@ extension SearchBookVC : UITableViewDelegate
         let update = UIAlertAction(title: "Yes", style: .default) { _ in
 
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "borrowdetails") as! BorrowBooksDetailsVC
-            vc.bookName = self.postData[indexPath.row].bookname ?? ""
+            vc.bookname = self.postData[indexPath.row].bookname ?? ""
             self.show(vc, sender: self)
 
         }

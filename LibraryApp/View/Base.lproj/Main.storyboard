@@ -919,7 +919,7 @@
                                     <constraint firstAttribute="height" constant="41" id="dfg-V3-d06"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="borrowDatePickerClick:" destination="2wX-c1-qwJ" eventType="valueChanged" id="W8s-7C-z9a"/>
+                                    <action selector="borrowDatePickerSelect:" destination="2wX-c1-qwJ" eventType="valueChanged" id="Vdl-Ht-ZQ4"/>
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick borrow date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNA-TV-x8k">
@@ -940,7 +940,7 @@
                                     <constraint firstAttribute="height" constant="40" id="D8h-ai-dZF"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="returnDatePickerClick:" destination="2wX-c1-qwJ" eventType="valueChanged" id="sa9-0B-sen"/>
+                                    <action selector="returnDatePickerSelect:" destination="2wX-c1-qwJ" eventType="valueChanged" id="2go-xQ-7Gn"/>
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rta-Rd-rTh">
@@ -948,7 +948,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Borrow"/>
                                 <connections>
-                                    <action selector="borrowBtn:" destination="2wX-c1-qwJ" eventType="touchUpInside" id="ee3-0L-dzE"/>
+                                    <action selector="borrowBtn:" destination="2wX-c1-qwJ" eventType="touchUpInside" id="Oq9-rm-Fpg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOp-jy-Igp">
@@ -990,11 +990,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="booknameLbl" destination="xOp-jy-Igp" id="EBB-lp-SuE"/>
-                        <outlet property="borrowDatePicker" destination="jGE-OD-nJ9" id="jSY-dt-DHw"/>
-                        <outlet property="brrowDateLbl" destination="gPk-AJ-Pza" id="4gM-PZ-9h3"/>
-                        <outlet property="returnDateLbl" destination="D7O-iZ-MSy" id="8iF-0s-W9X"/>
-                        <outlet property="returnDatePicker" destination="KdK-6Y-9Bq" id="Kca-ub-T1B"/>
+                        <outlet property="booknameLbl" destination="xOp-jy-Igp" id="aZS-Ys-Kna"/>
+                        <outlet property="borrowDateLbl" destination="gPk-AJ-Pza" id="M7j-LD-KY1"/>
+                        <outlet property="borrowDatePicker" destination="jGE-OD-nJ9" id="hpJ-ZM-OlP"/>
+                        <outlet property="returnDateLbl" destination="D7O-iZ-MSy" id="8IM-2g-okF"/>
+                        <outlet property="returnDatePicker" destination="KdK-6Y-9Bq" id="YN1-yn-TTI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHz-6q-x60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

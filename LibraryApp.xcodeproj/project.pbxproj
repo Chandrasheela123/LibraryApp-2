@@ -18,9 +18,9 @@
 		3640C745285323840059D14F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3640C744285323840059D14F /* FirebaseStorage */; };
 		5E22651C2858607400CB3F03 /* CardRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E22651B2858607400CB3F03 /* CardRequestVC.swift */; };
 		5E22651E2858771800CB3F03 /* IssueLibraryCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E22651D2858771800CB3F03 /* IssueLibraryCardVC.swift */; };
-		5E22652028589C0B00CB3F03 /* BorrowBooksDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E22651F28589C0B00CB3F03 /* BorrowBooksDetailsVC.swift */; };
 		5E2265222858D39700CB3F03 /* BorrowBooksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2265212858D39700CB3F03 /* BorrowBooksCell.swift */; };
 		5E2265242858D5B200CB3F03 /* BorrowedBooksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2265232858D5B200CB3F03 /* BorrowedBooksVC.swift */; };
+		5E2265282859939000CB3F03 /* BorrowBooksDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2265272859939000CB3F03 /* BorrowBooksDetailsVC.swift */; };
 		5E3880E828574C2200A8D6D3 /* UsersBookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3880E728574C2200A8D6D3 /* UsersBookListCell.swift */; };
 		5E3880EA285779AA00A8D6D3 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3880E9285779AA00A8D6D3 /* ForgotPasswordVC.swift */; };
 		5E3880EC2857884800A8D6D3 /* LibraryCardIssueListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3880EB2857884800A8D6D3 /* LibraryCardIssueListVC.swift */; };
@@ -51,9 +51,9 @@
 		3640C73628530DEF0059D14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E22651B2858607400CB3F03 /* CardRequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRequestVC.swift; sourceTree = "<group>"; };
 		5E22651D2858771800CB3F03 /* IssueLibraryCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueLibraryCardVC.swift; sourceTree = "<group>"; };
-		5E22651F28589C0B00CB3F03 /* BorrowBooksDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowBooksDetailsVC.swift; sourceTree = "<group>"; };
 		5E2265212858D39700CB3F03 /* BorrowBooksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowBooksCell.swift; sourceTree = "<group>"; };
 		5E2265232858D5B200CB3F03 /* BorrowedBooksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowedBooksVC.swift; sourceTree = "<group>"; };
+		5E2265272859939000CB3F03 /* BorrowBooksDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorrowBooksDetailsVC.swift; sourceTree = "<group>"; };
 		5E3880E728574C2200A8D6D3 /* UsersBookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersBookListCell.swift; sourceTree = "<group>"; };
 		5E3880E9285779AA00A8D6D3 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		5E3880EB2857884800A8D6D3 /* LibraryCardIssueListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCardIssueListVC.swift; sourceTree = "<group>"; };
@@ -157,8 +157,8 @@
 				5E3880EB2857884800A8D6D3 /* LibraryCardIssueListVC.swift */,
 				5E22651B2858607400CB3F03 /* CardRequestVC.swift */,
 				5E22651D2858771800CB3F03 /* IssueLibraryCardVC.swift */,
-				5E22651F28589C0B00CB3F03 /* BorrowBooksDetailsVC.swift */,
 				5E2265232858D5B200CB3F03 /* BorrowedBooksVC.swift */,
+				5E2265272859939000CB3F03 /* BorrowBooksDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,8 +256,8 @@
 				5E3880EA285779AA00A8D6D3 /* ForgotPasswordVC.swift in Sources */,
 				5E2265242858D5B200CB3F03 /* BorrowedBooksVC.swift in Sources */,
 				3640C72928530DEC0059D14F /* AppDelegate.swift in Sources */,
+				5E2265282859939000CB3F03 /* BorrowBooksDetailsVC.swift in Sources */,
 				5E5B1F522854D0F000210512 /* BookListCell.swift in Sources */,
-				5E22652028589C0B00CB3F03 /* BorrowBooksDetailsVC.swift in Sources */,
 				5EDDEE722854506A0036CDCF /* LoginVC.swift in Sources */,
 				3640C72B28530DEC0059D14F /* SceneDelegate.swift in Sources */,
 				5EDDEE78285450EB0036CDCF /* WelcomeLibraryMembersVC.swift in Sources */,
