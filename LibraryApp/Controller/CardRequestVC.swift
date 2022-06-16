@@ -31,6 +31,9 @@ class CardRequestVC: UIViewController {
         }
     
     @IBAction func backBtn(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "member") as! WelcomeLibraryMembersVC
+        show(vc, sender: self)
     }
     /*
     // MARK: - Navigation

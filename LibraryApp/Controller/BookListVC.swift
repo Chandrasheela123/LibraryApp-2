@@ -10,15 +10,15 @@ import FirebaseDatabase
 
 class BookListVC: UIViewController {
     
-    @IBOutlet weak var searchBarTxt: UISearchBar!
+    
     @IBOutlet weak var tbl: UITableView!
     
     
     var dbref : DatabaseReference?
     var dbHandle : DatabaseHandle?
-    var postData : [BooksDetails] = [BooksDetails]()
+    var postData = [BooksDetails]()
     
-    var filteredUsers  = [BooksDetails]()
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,9 +29,7 @@ class BookListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBarTxt.delegate = self
-        
-        filteredUsers = postData
+       
         
         tbl.delegate = self
         tbl.dataSource = self
@@ -101,7 +99,7 @@ extension BookListVC : UITableViewDataSource, UISearchBarDelegate
 {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredUsers.count
+        return postData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -121,20 +119,20 @@ extension BookListVC : UITableViewDataSource, UISearchBarDelegate
         
     }
 
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-
-        if searchText  != ""
-        {
-            filteredUsers = postData.filter({ ($0.bookname?.contains(searchText))!})
-            tbl.reloadData()
-        }
-        else
-        {
-            filteredUsers = postData
-            tbl.reloadData()
-        }
-        tbl.reloadData()
-    }
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//
+//        if searchText  != ""
+//        {
+//            filteredUsers = postData.filter({ ($0.bookname?.contains(searchText))!})
+//            tbl.reloadData()
+//        }
+//        else
+//        {
+//            filteredUsers = postData
+//            tbl.reloadData()
+//        }
+//        tbl.reloadData()
+//    }
 }
 
 extension BookListVC : UITableViewDelegate

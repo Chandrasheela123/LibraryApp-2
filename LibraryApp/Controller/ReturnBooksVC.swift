@@ -78,6 +78,8 @@ class ReturnBooksVC: UIViewController {
         
         booknameLbl.text = bookname
         DBUtility.instance.removeBook(bookname: bookname)
+        
+        showAlert(title: "\(bookname) book returned sucessfully", msg: "")
     
     }
     
@@ -91,6 +93,10 @@ class ReturnBooksVC: UIViewController {
     
     
     @IBAction func backBtn(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "member") as! WelcomeLibraryMembersVC
+        show(vc, sender: self)
+        
     }
     
     /*

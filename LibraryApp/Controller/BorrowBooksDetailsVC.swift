@@ -57,7 +57,9 @@ class BorrowBooksDetailsVC: UIViewController {
         let borrowDate = borrowDateLbl.text ?? ""
         let returnDate = returnDateLbl.text ?? ""
         
+        showAlert(title: "\(bookname) book borrowed sucessfully", msg: "If return date is more than 7 days you need to pay fine of 100 Rs")
         DBUtility.instance.saveBorrowedBooksDetails(bookname: bookname, borrowDate: borrowDate, returnDate: returnDate)
+        
         
         
         
@@ -66,6 +68,9 @@ class BorrowBooksDetailsVC: UIViewController {
     
     
     @IBAction func backBtn(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "usersearch") as! SearchBookVC
+        show(vc, sender: self)
     }
     /*
     // MARK: - Navigation
