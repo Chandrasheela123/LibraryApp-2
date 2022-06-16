@@ -57,7 +57,11 @@ class LibraryCardIssueListVC: UIViewController {
         })
     }
     
-
+    @IBAction func backBtn(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "admin") as! WelcomeAdminVC
+        show(vc, sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

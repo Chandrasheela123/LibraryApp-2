@@ -31,6 +31,16 @@ class WelcomeLibraryMembersVC: UIViewController {
     }
     
     @IBAction func requestingForLibraryCardBtn(_ sender: Any) {
+        
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "libraryrequest") as! CardRequestVC
+        
+        show(vc, sender: self)
+    }
+    
+    @IBAction func homeBtn(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "home") as! ViewController
+        show(vc, sender: nil)
     }
     /*
     // MARK: - Navigation

@@ -29,6 +29,8 @@ class IssueLibraryCardVC: UIViewController {
         
         DBUtility.instance.saveCardDetails(name: name, cardNumber: cardNumber, status: status)
     }
+        
+        
     /*
     // MARK: - Navigation
 
@@ -40,4 +42,8 @@ class IssueLibraryCardVC: UIViewController {
     */
 
 }
+    
+    @IBAction func backBtn(_ sender: Any) {
+    }
+    
 }

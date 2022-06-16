@@ -34,6 +34,11 @@ class ForgotPasswordVC: UIViewController {
         
     }
     
+    @IBAction func cancelBtn(_ sender: Any) {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "login") as! LoginVC
+        self.show(vc, sender: nil)
+    }
     /*
     // MARK: - Navigation
 

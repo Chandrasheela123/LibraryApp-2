@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 class RegisterVC: UIViewController {
     
-    @IBOutlet weak var confirmPasswordTxt: UITextField!
+ @IBOutlet weak var confirmPasswordTxt: UITextField!
     @IBOutlet weak var newPasswordTxt: UITextField!
     @IBOutlet weak var mobileNoTxt: UITextField!
     @IBOutlet weak var cityTxt: UITextField!
@@ -39,7 +39,7 @@ class RegisterVC: UIViewController {
         
         let fullname = fullNameTxt.text ?? ""
         let password = newPasswordTxt.text ?? ""
-        let confirmPassword = confirmPasswordTxt.text ?? ""
+       let confirmPassword = confirmPasswordTxt.text ?? ""
         let email = emailIdTxt.text ?? ""
         let city = cityTxt.text ?? ""
         let mobile = mobileNoTxt.text ?? ""
@@ -71,6 +71,9 @@ class RegisterVC: UIViewController {
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "login") as! LoginVC
         show(vc, sender: self)
+    }
+    
+    @IBAction func cancelBtn(_ sender: Any) {
     }
     
     /*
@@ -122,8 +125,6 @@ extension RegisterVC : UITextFieldDelegate
             isValidCredentials = validateMobile(mobile: data)
         case emailIdTxt:
             isValidCredentials = validateMobile(mobile: data)
-//        case cityTxt:
-//            isValidCredentials = validateEmail(email: data)
         case newPasswordTxt:
             isValidCredentials = validateNewPassword(newpasswd: data)
         case confirmPasswordTxt :
@@ -150,14 +151,7 @@ extension RegisterVC : UITextFieldDelegate
         return mobile.count == 10 ? true : false
     }
     
-//    //email ID
-//    func validateEmail(email: String) -> Bool {
-//        if !email.isEmpty {
-//            return true
-//        }
-//
-//        return false
-//    }
+
     
     //new password
     func validateNewPassword(newpasswd: String) -> Bool {

@@ -33,6 +33,11 @@ class WelcomeAdminVC: UIViewController {
         show(vc, sender: nil)
     }
     
+    @IBAction func homeBtn(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "home") as! ViewController
+        show(vc, sender: nil)
+    }
     /*
     // MARK: - Navigation
 

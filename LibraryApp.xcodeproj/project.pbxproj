@@ -33,8 +33,6 @@
 		5E5B1F572855DF2300210512 /* BookListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F562855DF2300210512 /* BookListVC.swift */; };
 		5E5B1F5B2856296200210512 /* SearchBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F5A2856296200210512 /* SearchBookVC.swift */; };
 		5E915F292859C0B8002B1A68 /* ReturnBooksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E915F282859C0B8002B1A68 /* ReturnBooksVC.swift */; };
-		5E915F2B2859CC34002B1A68 /* IssueCardDBUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E915F2A2859CC34002B1A68 /* IssueCardDBUtilities.swift */; };
-		5E915F2D2859CCAE002B1A68 /* BooksDBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E915F2C2859CCAE002B1A68 /* BooksDBUtility.swift */; };
 		5E915F2F2859E666002B1A68 /* PayFineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E915F2E2859E666002B1A68 /* PayFineVC.swift */; };
 		5EDDEE722854506A0036CDCF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE712854506A0036CDCF /* LoginVC.swift */; };
 		5EDDEE74285450910036CDCF /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE73285450910036CDCF /* RegisterVC.swift */; };
@@ -70,8 +68,6 @@
 		5E5B1F562855DF2300210512 /* BookListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListVC.swift; sourceTree = "<group>"; };
 		5E5B1F5A2856296200210512 /* SearchBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookVC.swift; sourceTree = "<group>"; };
 		5E915F282859C0B8002B1A68 /* ReturnBooksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnBooksVC.swift; sourceTree = "<group>"; };
-		5E915F2A2859CC34002B1A68 /* IssueCardDBUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCardDBUtilities.swift; sourceTree = "<group>"; };
-		5E915F2C2859CCAE002B1A68 /* BooksDBUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksDBUtility.swift; sourceTree = "<group>"; };
 		5E915F2E2859E666002B1A68 /* PayFineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayFineVC.swift; sourceTree = "<group>"; };
 		5EDDEE712854506A0036CDCF /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5EDDEE73285450910036CDCF /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -145,8 +141,6 @@
 				5EDDEE79285457430036CDCF /* DBUtilities.swift */,
 				5EDDEE7D2854577D0036CDCF /* MemberDetailsUtility.swift */,
 				5E460DBA2856F11D0064BE32 /* Utility.swift */,
-				5E915F2A2859CC34002B1A68 /* IssueCardDBUtilities.swift */,
-				5E915F2C2859CCAE002B1A68 /* BooksDBUtility.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,7 +254,6 @@
 				5E3880EC2857884800A8D6D3 /* LibraryCardIssueListVC.swift in Sources */,
 				3640C72D28530DEC0059D14F /* ViewController.swift in Sources */,
 				5E5B1F4C2854941800210512 /* AddBookVC.swift in Sources */,
-				5E915F2D2859CCAE002B1A68 /* BooksDBUtility.swift in Sources */,
 				5E5B1F462854766700210512 /* MemberListVC.swift in Sources */,
 				5E5B1F572855DF2300210512 /* BookListVC.swift in Sources */,
 				5EDDEE7E2854577D0036CDCF /* MemberDetailsUtility.swift in Sources */,
@@ -270,7 +263,6 @@
 				5E2265242858D5B200CB3F03 /* BorrowedBooksVC.swift in Sources */,
 				3640C72928530DEC0059D14F /* AppDelegate.swift in Sources */,
 				5E2265282859939000CB3F03 /* BorrowBooksDetailsVC.swift in Sources */,
-				5E915F2B2859CC34002B1A68 /* IssueCardDBUtilities.swift in Sources */,
 				5E5B1F522854D0F000210512 /* BookListCell.swift in Sources */,
 				5EDDEE722854506A0036CDCF /* LoginVC.swift in Sources */,
 				5E915F292859C0B8002B1A68 /* ReturnBooksVC.swift in Sources */,

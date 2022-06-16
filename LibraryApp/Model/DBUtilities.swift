@@ -69,7 +69,7 @@ class DBUtility {
     
     let dbRef = Database.database().reference()
     let loggedInUser = Auth.auth().currentUser
- 
+    
     
     func removeBook(bookname: String){
         
@@ -82,60 +82,55 @@ class DBUtility {
     func saveBorrowedBooksDetails(bookname: String, borrowDate : String, returnDate: String)
     {
         let loggedInUser = Auth.auth().currentUser
-
+        
         let borrowed = BorrowedBooks(bookname: bookname, borrowDate: borrowDate, returnDate: returnDate)
-
+        
         if let user = loggedInUser{
             dbRef.child("Users").child(user.uid).child("Borrowed books details").child(bookname).setValue(borrowed.borrowedDict())
-
-//            let uNode = dbRef.child("Users").child(user.uid).child("Borrowed books details").child(bookname)
-//            uNode.child("Book Name").setValue(bookname)
-//            uNode.child("Borrow Date").setValue(borrowDate)
-//            uNode.child("Return Date").setValue(returnDate)
         }
-
+        
     }
-
+    
     func getBorrowedDetails(completionHandler: @escaping (BorrowedBooks) -> Void) {
         // get logged in user
         let loggedInUser = Auth.auth().currentUser
-
+        
         if let user = loggedInUser {
             // read from realtime database
-
+            
             let uNode = dbRef.child("Users").child(user.uid).child("Borrowed books details")
-
+            
             uNode.getData { err, snapshot in
-
+                
                 if err == nil {
-
+                    
                     let info = snapshot?.value as! Dictionary<String, String>
-
+                    
                     let bookname = info["BookName"] ?? ""
                     let borrowedDate = info["Borrowed Date"] ?? ""
                     let returnDate = info["Return Date"] ?? ""
-
-
-
+                    
+                    
+                    
                     let acc = BorrowedBooks(bookname: bookname, borrowDate: borrowedDate, returnDate: returnDate)
-
+                    
                     completionHandler(acc)
                 }
             }
         }
     }
     
-      func saveUserDetails(fullname:String, email: String, city: String, mobile: String, password: String){
-          
-          let loggedInUser = Auth.auth().currentUser
-          
-          let uAccount = Account(email: email, mobile: mobile, fullname: fullname, city: city, password: password)
-          
-          if let user = loggedInUser {
-              dbRef.child("Users").child(user.uid).setValue(uAccount.toDict())
-          }
-          
-      }
+    func saveUserDetails(fullname:String, email: String, city: String, mobile: String, password: String){
+        
+        let loggedInUser = Auth.auth().currentUser
+        
+        let uAccount = Account(email: email, mobile: mobile, fullname: fullname, city: city, password: password)
+        
+        if let user = loggedInUser {
+            dbRef.child("Users").child(user.uid).setValue(uAccount.toDict())
+        }
+        
+    }
     
     
     func getUserDetails(completionHandler: @escaping (Account) -> Void) {
@@ -182,55 +177,48 @@ class DBUtility {
     }
     
     func getBooksDetails(completionHandler: @escaping (Books) -> Void) {
+        
+        let uNode = dbRef.child("Users").child("BookID")
+        
+        uNode.getData { err, snapshot in
             
-            let uNode = dbRef.child("Users").child("BookID")
-            
-            uNode.getData { err, snapshot in
+            if err == nil {
                 
-                if err == nil {
-                    
-                    let info = snapshot?.value as! Dictionary<String, String>
-                    
-                    let bookName = info["Book Name"] ?? ""
-                    let numberOfBooks = info["Number of Books"] ?? ""
-                    let author = info["Author"] ?? ""
-                    let publicationDate = info["Publication Date"] ?? ""
-                    let bookID = info["BookID"] ?? ""
-                    
-                    
-                    print("\(bookName)")
-                    print("\(numberOfBooks)")
-                    print("\(author)")
-                    print("\(publicationDate)")
-                    
-                    
-                    let book = Books(bookName: bookName, numberOfBooks: numberOfBooks, author: author, publicationDate: publicationDate, bookID: bookID)
-                    completionHandler(book)
+                let info = snapshot?.value as! Dictionary<String, String>
+                
+                let bookName = info["Book Name"] ?? ""
+                let numberOfBooks = info["Number of Books"] ?? ""
+                let author = info["Author"] ?? ""
+                let publicationDate = info["Publication Date"] ?? ""
+                let bookID = info["BookID"] ?? ""
+                
+                
+                print("\(bookName)")
+                print("\(numberOfBooks)")
+                print("\(author)")
+                print("\(publicationDate)")
+                
+                
+                let book = Books(bookName: bookName, numberOfBooks: numberOfBooks, author: author, publicationDate: publicationDate, bookID: bookID)
+                completionHandler(book)
                 
             }
         }
     }
     
-    
-
     func saveCardRequestDetails(fullname:String, email: String){
-
+        
         let loggedInUser = Auth.auth().currentUser
         let uAccount = IssueCard(email: email, fullname: fullname)
         
         if let user = loggedInUser {
             dbRef.child("Library card details").child("Requests for library card").child(user.uid).setValue(uAccount.cardDict())
         }
-
-//        let uAccount = IssueCard(email: email, fullname: fullname)
-//        dbRef.child("Requests").child().setValue(uAccount.cardDict())
-        
-
     }
-
+    
     func getCardDetails(completionHandler: @escaping (IssueCard) -> Void) {
-      
-
+        
+        
         let loggedInUser = Auth.auth().currentUser
         
         if let user = loggedInUser {
@@ -245,8 +233,8 @@ class DBUtility {
                     let info = snapshot?.value as! Dictionary<String, String>
                     let email = info["email"] ?? ""
                     let fullname = info["fullname"] ?? ""
-                   
-                   print("\(fullname)")
+                    
+                    print("\(fullname)")
                     print("\(email)")
                     
                     let acc = IssueCard(email: email, fullname: fullname)
@@ -255,18 +243,15 @@ class DBUtility {
                 }
             }
         }
-}
+    }
     
     func saveCardDetails(name: String, cardNumber: Int, status: String)
     {
-//        let loggedInUser = Auth.auth().currentUser
-//
-//        if let user = loggedInUser{
-            
-            let uNode = dbRef.child("Library card details").child("Issued library card details").child(name)
-            uNode.child("Name").setValue(name)
-            uNode.child("Card Number").setValue(cardNumber)
-            uNode.child("Status").setValue(status)
+        
+        let uNode = dbRef.child("Library card details").child("Issued library card details").child(name)
+        uNode.child("Name").setValue(name)
+        uNode.child("Card Number").setValue(cardNumber)
+        uNode.child("Status").setValue(status)
         
     }
 }
