@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class ReturnBooksVC: UIViewController {
 
@@ -14,7 +16,10 @@ class ReturnBooksVC: UIViewController {
     @IBOutlet weak var returnDateLbl: UILabel!
     @IBOutlet weak var borrowDateLbl: UILabel!
     @IBOutlet weak var booknameLbl: UILabel!
-    @IBOutlet weak var nameTxt: UITextField!
+  
+    var dbref : DatabaseReference?
+    var dbHandle : DatabaseHandle?
+    var postData = [BorrowBookDetails]()
     
     var bookname = ""
     var borrowDate = ""
@@ -31,6 +36,12 @@ class ReturnBooksVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        let loggedInUser = Auth.auth().currentUser
+//        if let user = loggedInUser{
+//        
+//            dbref = Database.database().reference().child("Users").child(user.uid).child("Borrowed books details")
+//        }
+//        
         booknameLbl.text = bookname
         borrowDateLbl.text = borrowDate
         returnDateLbl.text = returnDate
@@ -41,6 +52,7 @@ class ReturnBooksVC: UIViewController {
     
    
     @IBAction func returnBtn(_ sender: Any) {
+        
         
         
         let borrowDate = borrowDateLbl.text ?? ""
@@ -61,10 +73,14 @@ class ReturnBooksVC: UIViewController {
             showAlert(title: "Days Extended", msg: "You have to pay 100 Rs fine")
             returnBtn.isEnabled = false
             payfineBtn.isEnabled = true
+            
         }
         
-        
+        booknameLbl.text = bookname
+        DBUtility.instance.removeBook(bookname: bookname)
+    
     }
+    
     
     @IBAction func payfineBtn(_ sender: Any) {
         

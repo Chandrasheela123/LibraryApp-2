@@ -99,10 +99,12 @@ extension BorrowedBooksVC : UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+       
+        
 
         let alert = UIAlertController(title: "Return", message: "Want to return book?", preferredStyle: .alert)
         let update = UIAlertAction(title: "Yes", style: .default){ _ in
-
+            
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "return") as! ReturnBooksVC
             vc.bookname = self.postData[indexPath.row].bookname ?? ""
             vc.borrowDate = self.postData[indexPath.row].borrowDate ?? ""
@@ -111,9 +113,14 @@ extension BorrowedBooksVC : UITableViewDelegate
             self.show(vc, sender: self)
 
         }
+        let no = UIAlertAction(title: "No", style: .default)
         alert.addAction(update)
+        alert.addAction(no)
         present(alert, animated: true, completion: nil)
 
     }
+    
+  
+    
 }
 

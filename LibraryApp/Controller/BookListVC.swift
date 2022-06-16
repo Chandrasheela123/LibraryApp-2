@@ -16,11 +16,13 @@ class BookListVC: UIViewController {
     
     var dbref : DatabaseReference?
     var dbHandle : DatabaseHandle?
-    var postData = [BooksDetails]()
-    var filteredUsers = [BooksDetails]()
+    var postData : [BooksDetails] = [BooksDetails]()
+    
+    var filteredUsers  = [BooksDetails]()
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
         tbl.reloadData()
     }
     
@@ -28,6 +30,7 @@ class BookListVC: UIViewController {
         super.viewDidLoad()
         
         searchBarTxt.delegate = self
+        
         filteredUsers = postData
         
         tbl.delegate = self
@@ -98,7 +101,7 @@ extension BookListVC : UITableViewDataSource, UISearchBarDelegate
 {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postData.count
+        return filteredUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,13 +118,14 @@ extension BookListVC : UITableViewDataSource, UISearchBarDelegate
         cell.publicationDateLbl.text = book.publicationDate
         
         return cell
+        
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
-        if searchText.isEmpty == false
+        if searchText  != ""
         {
-           // filteredUsers = postData.filter({ $0.contains(searchText)})
+            filteredUsers = postData.filter({ ($0.bookname?.contains(searchText))!})
             tbl.reloadData()
         }
         else
@@ -129,6 +133,7 @@ extension BookListVC : UITableViewDataSource, UISearchBarDelegate
             filteredUsers = postData
             tbl.reloadData()
         }
+        tbl.reloadData()
     }
 }
 
@@ -143,12 +148,12 @@ extension BookListVC : UITableViewDelegate
             let bookID = book.bookID
             
             let noOfBooks = alert.textFields?[1].text ?? ""
-            //let bookID = alert.textFields?[0].text ?? ""
             let author = alert.textFields?[3].text ?? ""
             let publicationDate = alert.textFields?[4].text ?? ""
             let bookname = alert.textFields?[0].text ?? ""
             
             self.updateNoOfBooks(bookID: bookID ?? "", numberOfBooks: noOfBooks, author: author, publicationDate: publicationDate, bookname: bookname)
+            self.tbl.reloadData()
             
         }
         
@@ -179,7 +184,7 @@ extension BookListVC : UITableViewDelegate
         
         let book = ["bookID" : bookID ,"numberOfBooks": numberOfBooks, "author": author, "publicationDate": publicationDate, "bookname": bookname]
         
-        dbref?.child(bookID).setValue(book)
+        dbref?.child(bookname).setValue(book)
     }
     
 }

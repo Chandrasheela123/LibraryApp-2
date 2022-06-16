@@ -9,9 +9,11 @@ import UIKit
 
 class WelcomeLibraryMembersVC: UIViewController {
 
+    @IBOutlet weak var nameLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
     

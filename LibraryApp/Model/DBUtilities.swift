@@ -70,6 +70,15 @@ class DBUtility {
     let dbRef = Database.database().reference()
     let loggedInUser = Auth.auth().currentUser
  
+    
+    func removeBook(bookname: String){
+        
+        let loggedInUser = Auth.auth().currentUser
+        if let user = loggedInUser{
+            dbRef.child("Users").child(user.uid).child("Borrowed books details").child(bookname).setValue(nil)
+        }
+    }
+    
     func saveBorrowedBooksDetails(bookname: String, borrowDate : String, returnDate: String)
     {
         let loggedInUser = Auth.auth().currentUser
@@ -167,7 +176,7 @@ class DBUtility {
     func saveBooksDetails(bookID: String, bookName: String, numberOfBooks: String, author: String, publicationDate: String){
         
         let bookAccount = Books(bookName: bookName, numberOfBooks: numberOfBooks, author: author, publicationDate: publicationDate, bookID: bookID)
-        dbRef.child("BooksList").child(bookID).setValue(bookAccount.bookDict())
+        dbRef.child("BooksList").child(bookName).setValue(bookAccount.bookDict())
         
         
     }

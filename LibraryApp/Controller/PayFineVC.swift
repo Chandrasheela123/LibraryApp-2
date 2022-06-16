@@ -42,6 +42,9 @@ class PayFineVC: UIViewController {
             showAlert(title: "Amount", msg: "Please enter amount")
         }
         
+        booknameLbl.text = bookname
+        DBUtility.instance.removeBook(bookname: bookname)
+        
     }
     
     /*
