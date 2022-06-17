@@ -8,22 +8,22 @@
 import UIKit
 
 class PayFineVC: UIViewController {
-
+    
     @IBOutlet weak var amountTxt: UITextField!
     @IBOutlet weak var booknameLbl: UILabel!
     
     var bookname = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         booknameLbl.text = bookname
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
-
-
+        
+        
         let vc = storyboard?.instantiateViewController(withIdentifier: "borrowed") as! BorrowedBooksVC
         show(vc, sender: self)
     }
@@ -33,8 +33,8 @@ class PayFineVC: UIViewController {
         let amount = amountTxt.text ?? ""
         
         if amount.isEmpty == false{
-        
-        showAlert(title: "Amount", msg: "Paid Sucessfully")
+            
+            showAlert(title: "Amount", msg: "Paid Sucessfully")
             
         }
         else
@@ -48,13 +48,13 @@ class PayFineVC: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

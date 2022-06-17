@@ -9,8 +9,7 @@ import UIKit
 import FirebaseDatabase
 
 class MemberListVC: UIViewController {
-
-   
+    
     @IBOutlet weak var tbl: UITableView!
     
     var dbref : DatabaseReference?
@@ -19,8 +18,9 @@ class MemberListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        tbl.layer.cornerRadius = 20.0
         tbl.delegate = self
         tbl.dataSource = self
         
@@ -67,15 +67,15 @@ class MemberListVC: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension MemberListVC : UITableViewDataSource
@@ -91,7 +91,7 @@ extension MemberListVC : UITableViewDataSource
         
         let emp : MembersDetails
         emp = postData[indexPath.row]
-        
+        cell.layer.cornerRadius = 10.0
         cell.nameLbl.text = emp.name
         cell.mobileNoLbl.text = emp.mobile
         cell.emailIDLbl.text = emp.email

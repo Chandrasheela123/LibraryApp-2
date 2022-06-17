@@ -9,16 +9,16 @@ import UIKit
 import FirebaseDatabase
 
 class CardRequestVC: UIViewController {
-
+    
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var nameTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     @IBAction func requestBtn(_ sender: Any) {
         
         let fullname = nameTxt.text ?? ""
@@ -27,8 +27,8 @@ class CardRequestVC: UIViewController {
         DBUtility.instance.saveCardRequestDetails(fullname: fullname, email: email)
         
         showAlert(title: "Request Sucessfully", msg: "Your request has been sent to admin")
-            
-        }
+        
+    }
     
     @IBAction func backBtn(_ sender: Any) {
         
@@ -36,13 +36,13 @@ class CardRequestVC: UIViewController {
         show(vc, sender: self)
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

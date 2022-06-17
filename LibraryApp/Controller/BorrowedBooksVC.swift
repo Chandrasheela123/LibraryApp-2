@@ -10,7 +10,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class BorrowedBooksVC: UIViewController {
-
+    
     @IBOutlet weak var tbl: UITableView!
     
     var dbref : DatabaseReference?
@@ -18,9 +18,9 @@ class BorrowedBooksVC: UIViewController {
     var postData = [BorrowBookDetails]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
+        // Do any additional setup after loading the view.
+        tbl.layer.cornerRadius = 20.0
         tbl.delegate = self
         tbl.dataSource = self
         
@@ -28,36 +28,36 @@ class BorrowedBooksVC: UIViewController {
         
         let loggedInUser = Auth.auth().currentUser
         if let user = loggedInUser{
-        
-            dbref = Database.database().reference().child("Users").child(user.uid).child("Borrowed books details")
-        
-        dbref!.observe(DataEventType.value, with: {(DataSnapshot) in
             
-            if DataSnapshot.childrenCount > 0 {
+            dbref = Database.database().reference().child("Users").child(user.uid).child("Borrowed books details")
+            
+            dbref!.observe(DataEventType.value, with: {(DataSnapshot) in
                 
-                print("has children")
-                
-                for users in DataSnapshot.children.allObjects as![DataSnapshot]{
+                if DataSnapshot.childrenCount > 0 {
                     
-                    let userObject = users.value as? [String: AnyObject]
+                    print("has children")
                     
-                    let bookName = userObject?["bookname"]
-                    let borrowDate = userObject?["borrowDate"]
-                    let returnDate = userObject?["returnDate"]
-                    
-                    let book = BorrowBookDetails(bookname: bookName as? String, borrowDate: borrowDate as? String, returnDate: returnDate as? String)
-                    
-                    print("books")
-                    self.postData.append(book)
-                    print("appended")
-                    
+                    for users in DataSnapshot.children.allObjects as![DataSnapshot]{
+                        
+                        let userObject = users.value as? [String: AnyObject]
+                        
+                        let bookName = userObject?["bookname"]
+                        let borrowDate = userObject?["borrowDate"]
+                        let returnDate = userObject?["returnDate"]
+                        
+                        let book = BorrowBookDetails(bookname: bookName as? String, borrowDate: borrowDate as? String, returnDate: returnDate as? String)
+                        
+                        print("books")
+                        self.postData.append(book)
+                        print("appended")
+                        
+                        
+                    }
+                    self.tbl.reloadData()
                     
                 }
-                self.tbl.reloadData()
-                
-            }
-        })
-    }
+            })
+        }
     }
     
     @IBAction func backBtn(_ sender: Any) {
@@ -67,15 +67,15 @@ class BorrowedBooksVC: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 extension BorrowedBooksVC : UITableViewDataSource, UISearchBarDelegate
 {
@@ -94,20 +94,20 @@ extension BorrowedBooksVC : UITableViewDataSource, UISearchBarDelegate
         cell.booknameLbl.text = book.bookname
         cell.borrowDateLbl.text = book.borrowDate
         cell.returnDateLbl.text = book.returnDate
-       
+        
         
         return cell
     }
-  }
+}
 
 
 extension BorrowedBooksVC : UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-       
         
-
+        
+        
         let alert = UIAlertController(title: "Return", message: "Want to return book?", preferredStyle: .alert)
         let update = UIAlertAction(title: "Yes", style: .default){ _ in
             
@@ -117,16 +117,16 @@ extension BorrowedBooksVC : UITableViewDelegate
             vc.returnDate = self.postData[indexPath.row].returnDate ?? ""
             
             self.show(vc, sender: self)
-
+            
         }
         let no = UIAlertAction(title: "No", style: .default)
         alert.addAction(update)
         alert.addAction(no)
         present(alert, animated: true, completion: nil)
-
+        
     }
     
-  
+    
     
 }
 

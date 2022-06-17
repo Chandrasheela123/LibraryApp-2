@@ -10,10 +10,8 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class SearchBookVC: UIViewController {
-
-    @IBOutlet weak var tbl: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var tbl: UITableView!
     
     var dbref : DatabaseReference?
     var dbHandle : DatabaseHandle?
@@ -21,7 +19,7 @@ class SearchBookVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         tbl.layer.cornerRadius = 20.0
@@ -64,18 +62,21 @@ class SearchBookVC: UIViewController {
     
     
     @IBAction func backBtn(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "member") as! WelcomeLibraryMembersVC
+        show(vc, sender: self)
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 extension SearchBookVC : UITableViewDataSource
 {
@@ -103,20 +104,20 @@ extension SearchBookVC : UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-
+        
         let alert = UIAlertController(title: "Do you want to borrow this book?", message: "Borrow this book only for 7 days", preferredStyle: .alert)
         let update = UIAlertAction(title: "Yes", style: .default) { _ in
-
+            
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "borrowdetails") as! BorrowBooksDetailsVC
             vc.bookname = self.postData[indexPath.row].bookname ?? ""
             self.show(vc, sender: self)
-
+            
         }
-       let no = UIAlertAction(title: "No", style: .default)
+        let no = UIAlertAction(title: "No", style: .default)
         alert.addAction(update)
         alert.addAction(no)
         present(alert, animated: true, completion: nil)
-
+        
     }
 }
 

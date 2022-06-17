@@ -8,17 +8,17 @@
 import UIKit
 
 class IssueLibraryCardVC: UIViewController {
-
+    
     @IBOutlet weak var statusTxt: UITextField!
     @IBOutlet weak var cardNumTxt: UITextField!
     @IBOutlet weak var nameTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     @IBAction func issueBtn(_ sender: Any) {
         
         let cardNumber = Int(cardNumTxt.text ?? "") ?? 0
@@ -26,24 +26,28 @@ class IssueLibraryCardVC: UIViewController {
         let name = nameTxt.text ?? ""
         
         if !status.isEmpty{
+            
+            DBUtility.instance.saveCardDetails(name: name, cardNumber: cardNumber, status: status)
+            
+        }
         
-        DBUtility.instance.saveCardDetails(name: name, cardNumber: cardNumber, status: status)
+        
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         }
+         */
+        
     }
-        
-        
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
     
     @IBAction func backBtn(_ sender: Any) {
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "requestlist") as! LibraryCardIssueListVC
+        show(vc, sender: self)
     }
     
 }

@@ -19,8 +19,6 @@ class BookListVC: UIViewController {
     var postData = [BooksDetails]()
     
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         
         tbl.reloadData()
@@ -29,7 +27,7 @@ class BookListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
         
         tbl.delegate = self
         tbl.dataSource = self
@@ -118,21 +116,21 @@ extension BookListVC : UITableViewDataSource, UISearchBarDelegate
         return cell
         
     }
-
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//
-//        if searchText  != ""
-//        {
-//            filteredUsers = postData.filter({ ($0.bookname?.contains(searchText))!})
-//            tbl.reloadData()
-//        }
-//        else
-//        {
-//            filteredUsers = postData
-//            tbl.reloadData()
-//        }
-//        tbl.reloadData()
-//    }
+    
+    //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    //
+    //        if searchText  != ""
+    //        {
+    //            filteredUsers = postData.filter({ ($0.bookname?.contains(searchText))!})
+    //            tbl.reloadData()
+    //        }
+    //        else
+    //        {
+    //            filteredUsers = postData
+    //            tbl.reloadData()
+    //        }
+    //        tbl.reloadData()
+    //    }
 }
 
 extension BookListVC : UITableViewDelegate
@@ -171,11 +169,11 @@ extension BookListVC : UITableViewDelegate
             textField.text = book.publicationDate
         }
         
-    
+        
         alert.addAction(update)
         present(alert, animated: true, completion: nil)
         
-      
+        
     }
     
     func updateNoOfBooks(bookID: String, numberOfBooks: String, author: String, publicationDate: String, bookname: String){

@@ -10,13 +10,13 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class ReturnBooksVC: UIViewController {
-
+    
     @IBOutlet weak var payfineBtn: UIButton!
     @IBOutlet weak var returnBtn: UIButton!
     @IBOutlet weak var returnDateLbl: UILabel!
     @IBOutlet weak var borrowDateLbl: UILabel!
     @IBOutlet weak var booknameLbl: UILabel!
-  
+    
     var dbref : DatabaseReference?
     var dbHandle : DatabaseHandle?
     var postData = [BorrowBookDetails]()
@@ -35,13 +35,7 @@ class ReturnBooksVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let loggedInUser = Auth.auth().currentUser
-//        if let user = loggedInUser{
-//        
-//            dbref = Database.database().reference().child("Users").child(user.uid).child("Borrowed books details")
-//        }
-//        
+                
         booknameLbl.text = bookname
         borrowDateLbl.text = borrowDate
         returnDateLbl.text = returnDate
@@ -50,10 +44,8 @@ class ReturnBooksVC: UIViewController {
         
     }
     
-   
+    
     @IBAction func returnBtn(_ sender: Any) {
-        
-        
         
         let borrowDate = borrowDateLbl.text ?? ""
         let returnDate = returnDateLbl.text ?? ""
@@ -74,13 +66,16 @@ class ReturnBooksVC: UIViewController {
             returnBtn.isEnabled = false
             payfineBtn.isEnabled = true
             
+            booknameLbl.text = bookname
+            DBUtility.instance.removeBook(bookname: bookname)
+            
         }
         
         booknameLbl.text = bookname
         DBUtility.instance.removeBook(bookname: bookname)
         
         showAlert(title: "\(bookname) book returned sucessfully", msg: "")
-    
+        
     }
     
     
@@ -100,13 +95,13 @@ class ReturnBooksVC: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

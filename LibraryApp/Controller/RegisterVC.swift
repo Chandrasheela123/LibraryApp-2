@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 class RegisterVC: UIViewController {
     
- @IBOutlet weak var confirmPasswordTxt: UITextField!
+    @IBOutlet weak var confirmPasswordTxt: UITextField!
     @IBOutlet weak var newPasswordTxt: UITextField!
     @IBOutlet weak var mobileNoTxt: UITextField!
     @IBOutlet weak var cityTxt: UITextField!
@@ -39,23 +39,23 @@ class RegisterVC: UIViewController {
         
         let fullname = fullNameTxt.text ?? ""
         let password = newPasswordTxt.text ?? ""
-       let confirmPassword = confirmPasswordTxt.text ?? ""
+        let confirmPassword = confirmPasswordTxt.text ?? ""
         let email = emailIdTxt.text ?? ""
         let city = cityTxt.text ?? ""
         let mobile = mobileNoTxt.text ?? ""
         
         Auth.auth().createUser(withEmail: email, password: password) { result, err in
-
+            
             if err == nil {
-//                if self.isValidCredentials == true
-//                {
+                //                if self.isValidCredentials == true
+                //                {
                 
                 print("No error in registration")
                 self.showAlert(title: "Registeration successfull", msg: "Login using Email ID and Password")
                 
                 DBUtility.instance.saveUserDetails(fullname: fullname, email: email, city: city, mobile: mobile, password: password)
                 
-            //}
+                //}
             }
             
             else {
@@ -74,6 +74,8 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func cancelBtn(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "home") as! ViewController
+        show(vc, sender: self)
     }
     
     /*
@@ -134,7 +136,7 @@ extension RegisterVC : UITextFieldDelegate
         }
     }
     
-//Below functions are used to validate data of all fields in new register page
+    //Below functions are used to validate data of all fields in new register page
     
     //first name
     func validateFullName(fullname: String) -> Bool{
@@ -150,8 +152,6 @@ extension RegisterVC : UITextFieldDelegate
     func validateMobile(mobile: String) -> Bool{
         return mobile.count == 10 ? true : false
     }
-    
-
     
     //new password
     func validateNewPassword(newpasswd: String) -> Bool {

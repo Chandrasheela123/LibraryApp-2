@@ -16,12 +16,12 @@ class LibraryCardIssueListVC: UIViewController {
     var dbref : DatabaseReference?
     var dbHandle : DatabaseHandle?
     var postData = [IssueLibraryCard]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
+        // Do any additional setup after loading the view.
+        tbl.layer.cornerRadius = 20.0
         tbl.delegate = self
         tbl.dataSource = self
         
@@ -63,15 +63,15 @@ class LibraryCardIssueListVC: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 extension LibraryCardIssueListVC : UITableViewDataSource
 {
@@ -86,26 +86,26 @@ extension LibraryCardIssueListVC : UITableViewDataSource
         
         let book : IssueLibraryCard
         book = postData[indexPath.row]
-        
+        cell.layer.cornerRadius = 10.0
         cell.textLabel?.text = book.name
         cell.detailTextLabel?.text = book.email
         
         return cell
     }
-//
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//
-//        if searchText.isEmpty == false
-//        {
-//            filteredUsers = postData.filter({ $0.contains(searchText)})
-//            tbl.reloadData()
-//        }
-//        else
-//        {
-//            filteredUsers = postData
-//            tbl.reloadData()
-//        }
-//    }
+    //
+    //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    //
+    //        if searchText.isEmpty == false
+    //        {
+    //            filteredUsers = postData.filter({ $0.contains(searchText)})
+    //            tbl.reloadData()
+    //        }
+    //        else
+    //        {
+    //            filteredUsers = postData
+    //            tbl.reloadData()
+    //        }
+    //    }
 }
 
 extension LibraryCardIssueListVC : UITableViewDelegate

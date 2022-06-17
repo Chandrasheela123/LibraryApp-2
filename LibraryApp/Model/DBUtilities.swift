@@ -71,13 +71,7 @@ class DBUtility {
     let loggedInUser = Auth.auth().currentUser
     
     
-    func removeBook(bookname: String){
-        
-        let loggedInUser = Auth.auth().currentUser
-        if let user = loggedInUser{
-            dbRef.child("Users").child(user.uid).child("Borrowed books details").child(bookname).setValue(nil)
-        }
-    }
+    
     
     func saveBorrowedBooksDetails(bookname: String, borrowDate : String, returnDate: String)
     {
@@ -206,6 +200,14 @@ class DBUtility {
         }
     }
     
+    func removeBook(bookname: String){
+        
+        let loggedInUser = Auth.auth().currentUser
+        if let user = loggedInUser{
+            dbRef.child("Users").child(user.uid).child("Borrowed books details").child(bookname).setValue(nil)
+        }
+    }
+    
     func saveCardRequestDetails(fullname:String, email: String){
         
         let loggedInUser = Auth.auth().currentUser
@@ -244,7 +246,7 @@ class DBUtility {
             }
         }
     }
-    
+   
     func saveCardDetails(name: String, cardNumber: Int, status: String)
     {
         

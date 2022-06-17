@@ -8,7 +8,7 @@
 import UIKit
 
 class BorrowBooksDetailsVC: UIViewController {
-
+    
     @IBOutlet weak var returnDatePicker: UIDatePicker!
     @IBOutlet weak var borrowDatePicker: UIDatePicker!
     @IBOutlet weak var returnDateLbl: UILabel!
@@ -21,7 +21,7 @@ class BorrowBooksDetailsVC: UIViewController {
     var bookname = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         booknameLbl.text = bookname
         borrowDatePicker.locale = .current
@@ -36,7 +36,7 @@ class BorrowBooksDetailsVC: UIViewController {
         dateFormatter1.dateFormat = "dd/MM/yyyy"
         dateFormatter1.dateStyle = .medium
         dateFormatter1.timeStyle = .none
-       
+        
         returnDateLbl.text = dateFormatter1.string(from: returnDateSelected)
     }
     @IBAction func borrowDatePickerSelect(_ sender: Any) {
@@ -60,10 +60,6 @@ class BorrowBooksDetailsVC: UIViewController {
         showAlert(title: "\(bookname) book borrowed sucessfully", msg: "If return date is more than 7 days you need to pay fine of 100 Rs")
         DBUtility.instance.saveBorrowedBooksDetails(bookname: bookname, borrowDate: borrowDate, returnDate: returnDate)
         
-        
-        
-        
-    
     }
     
     
@@ -73,13 +69,13 @@ class BorrowBooksDetailsVC: UIViewController {
         show(vc, sender: self)
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
