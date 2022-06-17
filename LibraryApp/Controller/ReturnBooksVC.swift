@@ -66,16 +66,17 @@ class ReturnBooksVC: UIViewController {
             returnBtn.isEnabled = false
             payfineBtn.isEnabled = true
             
+           
+        }
+        
+        else{
+            
             booknameLbl.text = bookname
             DBUtility.instance.removeBook(bookname: bookname)
             
+            showAlert(title: "\(bookname) book returned sucessfully", msg: "")
+            
         }
-        
-        booknameLbl.text = bookname
-        DBUtility.instance.removeBook(bookname: bookname)
-        
-        showAlert(title: "\(bookname) book returned sucessfully", msg: "")
-        
     }
     
     
@@ -84,6 +85,7 @@ class ReturnBooksVC: UIViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "pay") as! PayFineVC
         vc.bookname = bookname
         show(vc, sender: self)
+        
     }
     
     

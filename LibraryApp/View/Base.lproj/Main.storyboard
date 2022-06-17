@@ -474,7 +474,7 @@
             </objects>
             <point key="canvasLocation" x="3105" y="23"/>
         </scene>
-        <!--Welcome Library MembersVC-->
+        <!--Home-->
         <scene sceneID="a9v-MI-7eY">
             <objects>
                 <viewController storyboardIdentifier="member" id="I2H-Ou-eSY" customClass="WelcomeLibraryMembersVC" customModule="LibraryApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -572,12 +572,13 @@
                             <constraint firstItem="AMp-2a-lj3" firstAttribute="leading" secondItem="pW4-9K-qYG" secondAttribute="leading" constant="65" id="wCY-6j-ztW"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="QRF-DE-PtU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5B-kx-Qbw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076.8115942028987" y="675"/>
+            <point key="canvasLocation" x="1127" y="689"/>
         </scene>
-        <!--Card RequestVC-->
+        <!--Library card-->
         <scene sceneID="x0F-Va-bUk">
             <objects>
                 <viewController storyboardIdentifier="libraryrequest" id="tXU-a6-39u" customClass="CardRequestVC" customModule="LibraryApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -656,6 +657,7 @@
                             <constraint firstItem="qoN-83-pi5" firstAttribute="trailing" secondItem="WBF-h3-6QA" secondAttribute="trailing" constant="20" id="ris-tl-Fzz"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Library card" image="lanyardcard" catalog="system" id="w0C-sA-xiz"/>
                     <navigationItem key="navigationItem" id="IEO-pM-5Q9"/>
                     <connections>
                         <outlet property="emailTxt" destination="r3g-yJ-RHx" id="gSZ-UC-BdX"/>
@@ -664,7 +666,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30F-kP-0NN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076.8115942028987" y="1327.2321428571429"/>
+            <point key="canvasLocation" x="1126" y="1359"/>
         </scene>
         <!--Library Card Issue ListVC-->
         <scene sceneID="cCr-oU-S75">
@@ -816,7 +818,7 @@
             </objects>
             <point key="canvasLocation" x="4506" y="23"/>
         </scene>
-        <!--Search BookVC-->
+        <!--Books List-->
         <scene sceneID="lMv-Bt-6Hh">
             <objects>
                 <viewController storyboardIdentifier="usersearch" id="cfM-bP-C7b" customClass="SearchBookVC" customModule="LibraryApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -944,13 +946,14 @@
                             <constraint firstItem="q7n-iS-WVm" firstAttribute="trailing" secondItem="RZw-ep-Avd" secondAttribute="trailing" constant="10" id="onB-rZ-nXw"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Books List" image="book" catalog="system" id="ONz-qT-zK3"/>
                     <connections>
                         <outlet property="tbl" destination="RZw-ep-Avd" id="YVA-KO-3Bd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qy4-gx-lOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737.68115942029" y="675"/>
+            <point key="canvasLocation" x="1825" y="689"/>
         </scene>
         <!--Borrow Books DetailsVC-->
         <scene sceneID="GCn-xa-Bd7">
@@ -1117,7 +1120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHz-6q-x60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2411.594202898551" y="675"/>
+            <point key="canvasLocation" x="2606" y="675"/>
         </scene>
         <!--Return BooksVC-->
         <scene sceneID="n5U-I7-wIA">
@@ -1377,7 +1380,7 @@
             </objects>
             <point key="canvasLocation" x="-1075" y="675"/>
         </scene>
-        <!--Borrowed BooksVC-->
+        <!--Borrowed Books-->
         <scene sceneID="CfC-uP-bib">
             <objects>
                 <viewController storyboardIdentifier="borrowed" id="QK2-3n-cGQ" customClass="BorrowedBooksVC" customModule="LibraryApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1398,7 +1401,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CF2-I3-aAY">
-                                <rect key="frame" x="20" y="355.33333333333331" width="388" height="516.66666666666674"/>
+                                <rect key="frame" x="20" y="355.33333333333326" width="388" height="496.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="borrowtabelcell" rowHeight="131" id="U7M-lr-2l7" customClass="BorrowBooksCell" customModule="LibraryApp" customModuleProvider="target">
@@ -1498,7 +1501,7 @@
                         <viewLayoutGuide key="safeArea" id="tSx-Ab-S5W"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                         <constraints>
-                            <constraint firstItem="tSx-Ab-S5W" firstAttribute="bottom" secondItem="CF2-I3-aAY" secondAttribute="bottom" constant="20" id="G1z-lE-7GK"/>
+                            <constraint firstItem="tSx-Ab-S5W" firstAttribute="bottom" secondItem="CF2-I3-aAY" secondAttribute="bottom" constant="40" id="G1z-lE-7GK"/>
                             <constraint firstItem="cu2-tp-4qz" firstAttribute="leading" secondItem="tSx-Ab-S5W" secondAttribute="leading" constant="20" id="OmC-Qh-lVt"/>
                             <constraint firstItem="tSx-Ab-S5W" firstAttribute="trailing" secondItem="CF2-I3-aAY" secondAttribute="trailing" constant="20" id="YmR-qT-PUC"/>
                             <constraint firstItem="CF2-I3-aAY" firstAttribute="leading" secondItem="tSx-Ab-S5W" secondAttribute="leading" constant="20" id="aLG-5o-hd4"/>
@@ -1511,6 +1514,7 @@
                             <constraint firstItem="tSx-Ab-S5W" firstAttribute="trailing" secondItem="gRq-XP-et7" secondAttribute="trailing" constant="65" id="zQG-FB-crJ"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Borrowed Books" image="book.fill" catalog="system" id="NAS-vj-382"/>
                     <connections>
                         <outlet property="tbl" destination="CF2-I3-aAY" id="C9z-xA-k4s"/>
                     </connections>
@@ -2090,6 +2094,10 @@
     </scenes>
     <resources>
         <image name="Book 2" width="284" height="177"/>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="lanyardcard" catalog="system" width="108" height="128"/>
         <image name="lib 5" width="198" height="132"/>
         <image name="lib 6" width="135" height="106"/>
         <image name="lib 7" width="500" height="750"/>

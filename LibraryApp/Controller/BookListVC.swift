@@ -116,21 +116,6 @@ extension BookListVC : UITableViewDataSource, UISearchBarDelegate
         return cell
         
     }
-    
-    //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    //
-    //        if searchText  != ""
-    //        {
-    //            filteredUsers = postData.filter({ ($0.bookname?.contains(searchText))!})
-    //            tbl.reloadData()
-    //        }
-    //        else
-    //        {
-    //            filteredUsers = postData
-    //            tbl.reloadData()
-    //        }
-    //        tbl.reloadData()
-    //    }
 }
 
 extension BookListVC : UITableViewDelegate

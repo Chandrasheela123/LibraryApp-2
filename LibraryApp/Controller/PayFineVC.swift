@@ -24,7 +24,7 @@ class PayFineVC: UIViewController {
     @IBAction func cancelBtn(_ sender: Any) {
         
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "borrowed") as! BorrowedBooksVC
+        let vc = storyboard?.instantiateViewController(withIdentifier: "member") as! WelcomeLibraryMembersVC
         show(vc, sender: self)
     }
     
