@@ -10,9 +10,6 @@ import FirebaseDatabase
 import FirebaseAuth
 import FirebaseStorage
 
-import UIKit
-import CoreLocation
-
 struct Account {
     
     var email : String
@@ -69,9 +66,6 @@ class DBUtility {
     
     let dbRef = Database.database().reference()
     let loggedInUser = Auth.auth().currentUser
-    
-    
-    
     
     func saveBorrowedBooksDetails(bookname: String, borrowDate : String, returnDate: String)
     {
