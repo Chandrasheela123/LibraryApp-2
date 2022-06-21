@@ -513,7 +513,7 @@
                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="searchBooksBtn:" destination="I2H-Ou-eSY" eventType="touchUpInside" id="ttJ-dQ-oyi"/>
+                                            <segue destination="cfM-bP-C7b" kind="push" id="8uh-q3-r6R"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TZ-dT-Qws">
@@ -823,11 +823,11 @@
             <objects>
                 <viewController storyboardIdentifier="usersearch" id="cfM-bP-C7b" customClass="SearchBookVC" customModule="LibraryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tyb-v1-X99">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RZw-ep-Avd">
-                                <rect key="frame" x="10" y="151" width="408" height="721"/>
+                                <rect key="frame" x="10" y="151" width="408" height="701"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userbooklist" rowHeight="145" id="uFP-bP-ox8" customClass="UsersBookListCell" customModule="LibraryApp" customModuleProvider="target">
@@ -947,6 +947,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Books List" image="book" catalog="system" id="ONz-qT-zK3"/>
+                    <navigationItem key="navigationItem" id="Acb-AI-C8U"/>
                     <connections>
                         <outlet property="tbl" destination="RZw-ep-Avd" id="YVA-KO-3Bd"/>
                     </connections>

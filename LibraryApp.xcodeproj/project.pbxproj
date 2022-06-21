@@ -29,7 +29,6 @@
 		5E5B1F482854770300210512 /* MembersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F472854770300210512 /* MembersListCell.swift */; };
 		5E5B1F4C2854941800210512 /* AddBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F4B2854941800210512 /* AddBookVC.swift */; };
 		5E5B1F522854D0F000210512 /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F512854D0F000210512 /* BookListCell.swift */; };
-		5E5B1F552855C2CB00210512 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5B1F542855C2CB00210512 /* GoogleService-Info.plist */; };
 		5E5B1F572855DF2300210512 /* BookListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F562855DF2300210512 /* BookListVC.swift */; };
 		5E5B1F5B2856296200210512 /* SearchBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B1F5A2856296200210512 /* SearchBookVC.swift */; };
 		5E915F292859C0B8002B1A68 /* ReturnBooksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E915F282859C0B8002B1A68 /* ReturnBooksVC.swift */; };
@@ -40,6 +39,7 @@
 		5EDDEE78285450EB0036CDCF /* WelcomeLibraryMembersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE77285450EB0036CDCF /* WelcomeLibraryMembersVC.swift */; };
 		5EDDEE7A285457430036CDCF /* DBUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE79285457430036CDCF /* DBUtilities.swift */; };
 		5EDDEE7E2854577D0036CDCF /* MemberDetailsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDDEE7D2854577D0036CDCF /* MemberDetailsUtility.swift */; };
+		5EEE5D532861C9F7002CCDB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EEE5D522861C9F7002CCDB3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +64,6 @@
 		5E5B1F472854770300210512 /* MembersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersListCell.swift; sourceTree = "<group>"; };
 		5E5B1F4B2854941800210512 /* AddBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookVC.swift; sourceTree = "<group>"; };
 		5E5B1F512854D0F000210512 /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
-		5E5B1F542855C2CB00210512 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E5B1F562855DF2300210512 /* BookListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListVC.swift; sourceTree = "<group>"; };
 		5E5B1F5A2856296200210512 /* SearchBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookVC.swift; sourceTree = "<group>"; };
 		5E915F282859C0B8002B1A68 /* ReturnBooksVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnBooksVC.swift; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		5EDDEE77285450EB0036CDCF /* WelcomeLibraryMembersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLibraryMembersVC.swift; sourceTree = "<group>"; };
 		5EDDEE79285457430036CDCF /* DBUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUtilities.swift; sourceTree = "<group>"; };
 		5EDDEE7D2854577D0036CDCF /* MemberDetailsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailsUtility.swift; sourceTree = "<group>"; };
+		5EEE5D522861C9F7002CCDB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 				3640C73E285310400059D14F /* Controller */,
 				3640C73128530DEF0059D14F /* Assets.xcassets */,
 				3640C73628530DEF0059D14F /* Info.plist */,
-				5E5B1F542855C2CB00210512 /* GoogleService-Info.plist */,
+				5EEE5D522861C9F7002CCDB3 /* GoogleService-Info.plist */,
 			);
 			path = LibraryApp;
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3640C73528530DEF0059D14F /* LaunchScreen.storyboard in Resources */,
-				5E5B1F552855C2CB00210512 /* GoogleService-Info.plist in Resources */,
+				5EEE5D532861C9F7002CCDB3 /* GoogleService-Info.plist in Resources */,
 				3640C73228530DEF0059D14F /* Assets.xcassets in Resources */,
 				3640C73028530DEC0059D14F /* Main.storyboard in Resources */,
 			);
